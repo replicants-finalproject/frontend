@@ -29,6 +29,31 @@ function NPLogin() {
     }
   }
 
+  async function SignUp() {
+    try {
+      const endpoint = 'http://localhost:5000/api/NPSignUp'
+      const data = {
+        username: username, 
+        password: password,
+      }
+      const configs = {
+        method: 'POST',
+        body: JSON.stringify(data),
+        mode: 'cors',
+        headers: {'Content-type' : 'application/json'}
+      }
+      const res = await fetch(endpoint, configs);
+      const json_res = await res.json();
+      if (json_res) {
+        sessionStorage.setItem("id", json_res[0])
+        sessionStorage.setItem("user_type", "nonprofit")
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  
   return (
     <div>
       <p>NP Login Page</p>
@@ -37,6 +62,7 @@ function NPLogin() {
       <label>Password: </label>
       <input onChange={(e)=>setPassword(String(e.target.value))}></input>
       <button onClick={(e)=>Login()}>Login</button>
+      <button onClick={(e)=>SignUp()}>Sign Up</button>
     </div>
   )
 };

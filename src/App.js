@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // styling imports
 import { ThemeProvider } from 'emotion-theming';
@@ -10,20 +10,28 @@ import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Router from  './components/Router';
 
+
 // component and page imports
 import Home from './container/Home';
+import LoginHome from './container/LoginHome';
+import ShipperHome from './container/Shipper/ShipperHome';
+import NPHome from './container/NonProfit/NPHome';
 
 
 function App() {
 
-  let loginHomePage = null;
-  const loggedin = false;
-
-  if (loggedin === false) {
-    loginHomePage = ( <Home /> )
-  } else {
-    // session login stuff
+  function useStateWithSessionStorage(sessionStorageKey) { 
+    const [id, setID] = useState(sessionStorage.getItem(sessionStorageKey) || '');
+    return [id, setID];
   }
+
+  const [id, setID] = useStateWithSessionStorage('id')
+
+  useEffect(() => {
+    sessionStorage.setItem('id', id)
+  },
+    [id]
+  )
 
   return (
     <div>
@@ -31,7 +39,7 @@ function App() {
         <ThemeProvider theme={theme}>
             <Header />
             <Router />
-            { loginHomePage }
+            { id ? <Home/> : <LoginHome setID={setID}/>}
         </ThemeProvider>
         </BrowserRouter>
     </div>
