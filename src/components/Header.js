@@ -5,20 +5,24 @@ import { Flex, Box, Text } from 'rebass';
 
 
 function Header() {
+
   return (
         <Flex sx={{
-                bg: 'navy',
-                textAlign: 'center',
-                height: '50px',
-                color: '#ffffff'}}>
+                height: '70px',
+                paddingTop: '12px',
+                bg: '#202480;',
+                color: '#ffffff',
+                fontSize: '35px',
+                fontWeight: 'bold',
+                }}>
+            
+            <Box mx='auto' textAlign='right'/>
 
-            <Box mx='auto' />
-
-            <Box width={1/3}>
-                <Text>Charity Shipper</Text>
+            <Box width='1000px' textAlign='center'>
+                <Text>Ship For Charity</Text>
             </Box>
 
-            <Box mx='auto' />
+            <Box mx='auto' textAlign='right'/>
         </Flex>
   )
 };
