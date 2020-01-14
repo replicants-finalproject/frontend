@@ -9,49 +9,56 @@ import { Link } from 'react-router-dom';
 
 function Home() {
 
-  const styles = {
-    width: '300px',
-    height: '300px',
-    color: '#212450',
-    fontSize: '35px',
-    fontWeight: 'bold',
-    textDecoration: 'none',
-    borderStyle: 'solid',
-    borderWidth: '1px',
-    borderRadius: '8px',
-    borderColor: '#bbbbbb',
-    boxShadow: '2px 2px 7px -3px rgb(120, 120, 120)'
-  };
+    const boxStyles = {
+        width: '300px',
+        height: '300px',
+        borderStyle: 'solid',
+        borderWidth: '1px',
+        borderRadius: '8px',
+        borderColor: '#bbbbbb',
+        boxShadow: '2px 2px 7px -3px rgb(120, 120, 120)'
+    };
+  
+    const textStyles = {
+        paddingTop: '200px',
+        color: '#212450',
+        fontSize: '35px',
+        fontWeight: 'bold'
+    }
 
-  return (
-    <Flex justifyContent='center'>
-      <Flex sx={{
-            width: '1000px',
-            paddingTop: '10%',
-            paddingLeft: '5%',
-            paddingRight: '5%',
-            bg: '#ffffff',
-            textAlign: 'center',
-            justifyContent: 'center',
-            alignItems: 'center'
-            }}>
+    return ( 
+        <Flex justifyContent='center'>
+          <Flex sx={{
+              flexWrap: 'row',
+              width: '1000px',
+              paddingTop: '10%',
+              paddingLeft: '5%',
+              paddingRight: '5%',
+              bg: '#ffffff',
+              textAlign: 'center',
+              justifyContent: 'center',
+              alignItems: 'center'}}>
+
+            <Box mx='auto' />
+            
+            <Link to='/container/Shipper/ShipperLogin' style={{ textDecoration: 'none' }}>
+              <Box style={boxStyles}>
+                <Text style={textStyles}>Shipper Login</Text>
+              </Box>
+            </Link>
+
+            <Box minWidth='50px' />
+
+            <Link to='/container/NonProfit/NPLogin' style={{ textDecoration: 'none' }}>
+              <Box style={boxStyles}>
+                <Text style={textStyles}>Nonprofit Login</Text>
+              </Box>
+            </Link>
 
             <Box mx='auto' />
 
-            <Box style={styles}>
-              Shipper Login
-            </Box>
-
-            <Box width='50px' />
-
-            <Box style={styles}>
-              Nonprofit Login
-            </Box>
-
-            <Box mx='auto' />
-
-      </Flex>
-    </Flex>
-  )
+          </Flex>
+        </Flex>
+    )
 };
 export default Home;
