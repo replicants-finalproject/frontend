@@ -17,7 +17,7 @@ import Home from './container/Home';
 function App() {
 
   let loginHomePage = null;
-  const loggedin = true;
+  const loggedin = false;
 
   if (loggedin === false) {
     loginHomePage = ( <Home /> )
