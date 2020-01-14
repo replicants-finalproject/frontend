@@ -16,13 +16,22 @@ import Home from './container/Home';
 
 function App() {
 
+  let loginHomePage = null;
+  const loggedin = true;
+
+  if (loggedin === false) {
+    loginHomePage = ( <Home /> )
+  } else {
+    // session login stuff
+  }
+
   return (
     <div>
         <BrowserRouter>
         <ThemeProvider theme={theme}>
             <Header />
             <Router />
-            <Home />
+            { loginHomePage }
         </ThemeProvider>
         </BrowserRouter>
     </div>
