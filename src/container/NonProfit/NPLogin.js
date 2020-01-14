@@ -22,6 +22,7 @@ function NPLogin() {
       const json_res = await res.json();
       if (json_res) {
         sessionStorage.setItem("id", json_res[0])
+        sessionStorage.setItem("user_type", "nonprofit")
       }
     } catch (err) {
       console.log(err)
