@@ -8,8 +8,8 @@ import './home.css';
 import { Link } from 'react-router-dom';
 
 // file imports
-import waves from '../images/waves1.png';
-import boxes from '../images/boxes1.png';
+import shipper from '../images/shipper1.png';
+import nonprofit from '../images/ribbon.png';
 
 
 function Home() {
@@ -18,16 +18,16 @@ function Home() {
         width: '300px',
         height: '300px',
         marginTop: '0px',
-        backgroundColor: '#ffffff',
+        backgroundColor: '#bbbbbb',
         borderStyle: 'solid',
         borderWidth: '1px',
         borderRadius: '8px',
         borderColor: '#bbbbbb',
-        boxShadow: '2px 2px 7px -3px rgb(120, 120, 120)',
+        boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
     };
   
     const textStyles = {
-        paddingTop: '200px',
+        paddingTop: '5px',
         color: '#212450',
         fontSize: '35px',
         fontWeight: 'bold'
@@ -48,6 +48,7 @@ function Home() {
             
             <Link to='/shipperLogin' style={{ textDecoration: 'none' }}>
               <Box style={boxStyles}>
+              <Image src={shipper} height='200px' marginTop='30px' />
                 <Text style={textStyles}>Shipper Login</Text>
               </Box>
             </Link>
@@ -56,6 +57,7 @@ function Home() {
 
             <Link to='/npLogin' style={{ textDecoration: 'none' }}>
               <Box style={boxStyles}>
+                <Image src={nonprofit} height='200px' marginTop='30px' />
                 <Text style={textStyles}>Nonprofit Login</Text>
               </Box>
             </Link>
