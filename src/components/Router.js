@@ -10,9 +10,9 @@ import ShipperLogin from '../container/Shipper/ShipperLogin';
 function Router() {
   return (
     <div>
-        <Route path="../container/Home" component={Home}/>
-        <Route path="../container/NonProfit/NPLogin" component={NPLogin}/>
-        <Route path="../container/Shipper/ShipperLogin" component={ShipperLogin}/>
+        <Route path="/home" component={Home}/>
+        <Route path="/npLogin" component={NPLogin}/>
+        <Route path="/shipperLogin" component={ShipperLogin}/>
     </div>
   )
 };
