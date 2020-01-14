@@ -18,17 +18,17 @@ function Home() {
         width: '300px',
         height: '300px',
         marginTop: '0px',
-        backgroundColor: '#bbbbbb',
+        backgroundColor: '#dddddd',
         borderStyle: 'solid',
         borderWidth: '1px',
         borderRadius: '8px',
-        borderColor: '#bbbbbb',
+        borderColor: '#dddddd',
         boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
     };
   
     const textStyles = {
         paddingTop: '5px',
-        color: '#212450',
+        color: 'rgb(0, 68, 170)',
         fontSize: '35px',
         fontWeight: 'bold'
     };
@@ -39,7 +39,7 @@ function Home() {
               flexWrap: 'row',
               width: '100%',
               paddingTop: '10%',
-              backgroundColor: '#ffffff',
+              // backgroundColor: '#ffffff',
               textAlign: 'center',
               justifyContent: 'center',
               alignItems: 'center'}}>
