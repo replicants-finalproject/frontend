@@ -41,7 +41,7 @@ function Home() {
 
             <Box mx='auto' />
             
-            <Link to='/container/Shipper/ShipperLogin' style={{ textDecoration: 'none' }}>
+            <Link to='/shipperLogin' style={{ textDecoration: 'none' }}>
               <Box style={boxStyles}>
                 <Text style={textStyles}>Shipper Login</Text>
               </Box>
@@ -49,7 +49,7 @@ function Home() {
 
             <Box minWidth='50px' />
 
-            <Link to='/container/NonProfit/NPLogin' style={{ textDecoration: 'none' }}>
+            <Link to='/npLogin' style={{ textDecoration: 'none' }}>
               <Box style={boxStyles}>
                 <Text style={textStyles}>Nonprofit Login</Text>
               </Box>
