@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+// styling imports
+import { Flex, Box, Text } from 'rebass';
+
 
 function NPLogin() {
   const [username, setUsername] = useState('')
@@ -56,7 +59,7 @@ function NPLogin() {
   
   return (
     <div>
-      <p>NP Login Page</p>
+      <Text>NP Login Page</Text>
       <label>Username: </label>
       <input onChange={(e)=>setUsername(String(e.target.value))}></input>
       <label>Password: </label>

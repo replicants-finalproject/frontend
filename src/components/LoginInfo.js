@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
 
+// styling imports
+import { Flex, Box, Text, Image, Button } from 'rebass';
+
+// file imports
+import '../container/loginhome.css';
+import waves from '../images/waves1.png';
+import shipperIcon from '../images/shipper1.png';
+import nonprofitIcon from '../images/ribbon.png';
+
+
 function LoginInfo(props) {
     // const [company, setCompany] = useState('')
     const [username, setUsername] = useState('')
@@ -33,24 +43,112 @@ function LoginInfo(props) {
         }
     }
 
+    const boxStyles = {
+        height: '310px',
+        minWidth: '650px',
+        marginTop: '0px',
+        padding: '2%',
+        textAlign: 'left',
+        fontFamily: 'Open Sans',
+        backgroundColor: '#eeeeee',
+        borderStyle: 'solid',
+        borderWidth: '2px',
+        borderRadius: '8px',
+        borderColor: '#aaaaaa',
+        boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
+    };
 
+    const textStyles = {
+        padding: '10px 0px 25px 0px',
+        color: 'rgb(0, 68, 170)',
+        fontSize: '34px',
+        fontWeight: 'bold'
+    };
+
+    const flexStyles = {
+      width: '350px',
+      justifyContent: 'space-between'
+    }
+
+    const labelStyles = {
+        width: '100px',
+        paddingRight: '10px',
+        color: '#000000',
+        fontFamily: 'Open Sans',
+        fontSize: '25px'
+    };
+
+    const inputStyles = {
+        height: '30px',
+        width: '200px',
+        borderStyle: 'solid',
+        borderWidth: '2px',
+        borderColor: '#aaaaaa'
+    };
+
+    const imageStyles = {
+      height: '160px',
+      marginTop: '0px',
+      paddingBottom: '0px',
+    }
 
     return(
         <div>
-            <p>LOGIN INFO PAGE</p>
-            {/* <label>Company:</label>
-            <input onChange={(e)=>setCompany(String(e.target.value))}></input> */}
-            <label>Username: </label>
-            <input onChange={(e)=>setUsername(String(e.target.value))}></input>
-            <label>Password: </label>
-            <input onChange={(e)=>setPassword(String(e.target.value))}></input>
+          <Flex sx={{
+                  flexWrap: 'row',
+                  width: '100%',
+                  paddingTop: '10%',
+                  textAlign: 'center',
+                  justifyContent: 'center',
+                  alignItems: 'center'}}>
 
-            <button onClick={(e)=>flask((flaskEndpoint + "_login"), data)}>Login</button>
-            <button onClick={(e)=>flask((flaskEndpoint + "_create_account"), data)}>Sign Up</button>
+            <Image src={waves} height='283px' width='50%' />
+            
+            <Box style={boxStyles}>
 
+                <Flex justifyContent='space-between'>
+                  <div>
 
+                  { (props.hasChosen === 'shipper') ? 
+                      <Text style={textStyles}>Shipper Login</Text> : 
+                      <Text style={textStyles}>Nonprofit Login</Text> }
+                    
+
+                    {/* <label>Company:</label>
+                    <input onChange={(e)=>setCompany(String(e.target.value))}></input> */}
+
+                    <Flex style={flexStyles}>
+                        <label style={labelStyles}>Username:</label>
+                        <input style={inputStyles} onChange={(e)=>setUsername(String(e.target.value))} />
+                    </Flex>
+                    <br/>
+
+                    <Flex style={flexStyles}>
+                        <label style={labelStyles}>Password:</label>
+                        <input style={inputStyles} onChange={(e)=>setPassword(String(e.target.value))} />
+                    </Flex>
+                    <br/>
+                  </div>
+
+                  { (props.hasChosen === 'shipper') ? 
+                      <Image src={shipperIcon} style={imageStyles} /> : 
+                      <Image src={nonprofitIcon} style={imageStyles} /> }
+                  
+
+                </Flex>
+
+                <Flex justifyContent='space-between'>
+                    <Button onClick={(e)=>flask((flaskEndpoint + "_login"), data)}>
+                        Login</Button>
+                    <Button onClick={(e)=>flask((flaskEndpoint + "_create_account"), data)}>
+                        Sign Up</Button>
+                </Flex>
+            </Box>
+            
+            <Image src={waves} height='283px' width='50%' />
+
+          </Flex>
         </div> 
     )
-}
-
+};
 export default LoginInfo;
