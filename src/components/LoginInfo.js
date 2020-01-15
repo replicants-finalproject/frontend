@@ -13,6 +13,7 @@ function LoginInfo(props) {
         password: password
     }
 
+
     async function flask(flaskEndpoint, data) {
         try {
           const endpoint = `http://localhost:5000/api/${flaskEndpoint}`
@@ -27,6 +28,7 @@ function LoginInfo(props) {
           if (json_res) {
             sessionStorage.setItem("id", json_res['pk'])
             sessionStorage.setItem("user_type", props.hasChosen )
+            props.setID(json_res['pk'])
           }
         } catch (err) {
           console.log(err)
