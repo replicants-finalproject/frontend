@@ -1,0 +1,25 @@
+/* body {
+    height: 100px;
+    background: url("../images/waves1.png");
+    background-repeat: repeat-x;
+}
+ */
+
+.waves {
+    background: url("../images/waves1.png");
+    background-repeat: repeat;
+}
+
+.box-button {
+    margin: 0;
+    width: 300px;
+}
+
+.box-button:hover {
+    cursor: pointer;
+}
+
+.box-button:active {
+    padding-top: 2px;
+    padding-left: 4px;
+}
