@@ -1,14 +1,9 @@
-/* body {
-    height: 100px;
-    background: url("../images/waves1.png");
-    background-repeat: repeat-x;
-}
- */
 
+/* .waves is the the olc way to do flanking waves with 4 big lines
 .waves {
     background: url("../images/waves1.png");
     background-repeat: repeat;
-}
+} */
 
 .box-button {
     margin: 0;

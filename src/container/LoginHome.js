@@ -8,6 +8,7 @@ import LoginInfo from '../components/LoginInfo'
 
 // file imports
 import './loginhome.css';
+import waves from '../images/waves1.png';
 import shipperIcon from '../images/shipper1.png';
 import nonprofitIcon from '../images/ribbon.png';
 
@@ -17,14 +18,14 @@ function LoginHome(props) {
     const [hasChosen, setHasChosen] = useState('')
 
     const boxStyles = {
+          height: '310px',
           minWidth: '300px',
-          minWeight: '300px',
           marginTop: '0px',
           backgroundColor: '#eeeeee',
           borderStyle: 'solid',
           borderWidth: '2px',
           borderRadius: '8px',
-          borderColor: '#dddddd',
+          borderColor: '#aaaaaa',
           boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
     };
 
@@ -36,7 +37,8 @@ function LoginHome(props) {
     const textStyles = {
           padding: '10px 0px',
           color: 'rgb(0, 68, 170)',
-          fontSize: '35px',
+          fontFamily: 'Open Sans',
+          fontSize: '34px',
           fontWeight: 'bold'
     };
 
@@ -53,7 +55,7 @@ function LoginHome(props) {
               justifyContent: 'center',
               alignItems: 'center'}}>
 
-            <Box className='waves' height='263px' width='50%' />
+            <Image src={waves} height='283px' width='50%' />
             
             <Box className='box-button' style={boxStyles} 
                   onClick={(e)=>setHasChosen('shipper')}>
@@ -69,7 +71,7 @@ function LoginHome(props) {
               <Text style={textStyles}>Nonprofit Login</Text>
             </Box>
 
-            <Box className='waves' height='263px' width='50%' />
+            <Image src={waves} height='283px' width='50%' />
 
           </Flex>
         }
