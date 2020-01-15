@@ -12,6 +12,11 @@
 
 .box-button {
     margin: 0;
+    width: 300px;
+}
+
+.box-button:hover {
+    cursor: pointer;
 }
 
 .box-button:active {
