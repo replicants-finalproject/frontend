@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // link and route imports
 import ShipperHome from './Shipper/ShipperHome';
@@ -6,14 +6,21 @@ import NPHome from './NonProfit/NPHome';
 
 
 function Home() {
-  const [shipper, setShipper] = useState(false)
-  
-  shipper = sessionStorage.getItem("shipper")
+
+  let userType = sessionStorage.getItem('user_type')
+
+  let homePage;
+  if (userType === 'shipper') {
+    homePage = <ShipperHome/>
+  } else {
+    homePage = <NPHome/>
+  }
+
 
     return ( 
       <div>
         <p>HOME PAGE</p>
-        {shipper ? <ShipperHome/> : <NPHome/>}
+        { homePage }
       </div>
     )
 };
