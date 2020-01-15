@@ -45,7 +45,7 @@ function LoginHome(props) {
     return ( 
       <div>
 
-        { hasChosen ? <LoginInfo hasChosen={hasChosen} /> :
+        { hasChosen ? <LoginInfo hasChosen={hasChosen} setID={props.setID} /> :
 
           <Flex sx={{
               flexWrap: 'row',
