@@ -10,8 +10,9 @@ function Header() {
         <Flex sx={{
                 height: '70px',
                 paddingTop: '12px',
-                bg: '#202480;',
+                bg: 'rgb(0, 51, 128)',
                 color: '#ffffff',
+                fontFamily: 'Open Sans',
                 fontSize: '35px',
                 fontWeight: 'bold',
                 }}>

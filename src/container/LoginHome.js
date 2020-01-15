@@ -1,65 +1,81 @@
 import React, { useState } from 'react';
 
 // styling imports
-import { Flex, Box, Text } from 'rebass';
+import { Flex, Box, Text, Image } from 'rebass';
 
-// Link-Header-Route imports
-import { Link } from 'react-router-dom';
-
+// component import
 import LoginInfo from '../components/LoginInfo'
+
+// file imports
+import './loginhome.css';
+import waves from '../images/waves1.png';
+import shipperIcon from '../images/shipper1.png';
+import nonprofitIcon from '../images/ribbon.png';
 
 
 function LoginHome(props) {
-  const [hasChosen, setHasChosen] = useState('')
+
+    const [hasChosen, setHasChosen] = useState('')
 
     const boxStyles = {
-        width: '300px',
-        height: '300px',
-        borderStyle: 'solid',
-        borderWidth: '1px',
-        borderRadius: '8px',
-        borderColor: '#bbbbbb',
-        boxShadow: '2px 2px 7px -3px rgb(120, 120, 120)'
+          height: '310px',
+          minWidth: '300px',
+          marginTop: '0px',
+          backgroundColor: '#eeeeee',
+          borderStyle: 'solid',
+          borderWidth: '2px',
+          borderRadius: '8px',
+          borderColor: '#aaaaaa',
+          boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
     };
+
+    const imageStyles = {
+          height: '200px',
+          marginTop: '30px'
+    }
   
     const textStyles = {
-        paddingTop: '200px',
-        color: '#212450',
-        fontSize: '35px',
-        fontWeight: 'bold'
-    }
+          padding: '10px 0px',
+          color: 'rgb(0, 68, 170)',
+          fontFamily: 'Open Sans',
+          fontSize: '34px',
+          fontWeight: 'bold'
+    };
 
     return ( 
-        <Flex justifyContent='center'>
-          { hasChosen ? <LoginInfo hasChosen={hasChosen} /> :
+      <div>
+
+        { hasChosen ? <LoginInfo hasChosen={hasChosen} setID={props.setID} /> :
+
           <Flex sx={{
               flexWrap: 'row',
-              width: '1000px',
+              width: '100%',
               paddingTop: '10%',
-              paddingLeft: '5%',
-              paddingRight: '5%',
-              bg: '#ffffff',
               textAlign: 'center',
               justifyContent: 'center',
               alignItems: 'center'}}>
 
-            <Box mx='auto' />
-
-            <Box style={boxStyles} onClick={(e)=>setHasChosen('shipper')}>
-                <Text style={textStyles}>Shipper Login</Text>
+            <Image src={waves} height='283px' width='50%' />
+            
+            <Box className='box-button' style={boxStyles} 
+                  onClick={(e)=>setHasChosen('shipper')}>
+              <Image src={shipperIcon} style={imageStyles} />
+              <Text style={textStyles}>Shipper Login</Text>
             </Box>
 
             <Box minWidth='50px' />
 
-            <Box style={boxStyles} onClick={(e)=>setHasChosen('np')}>
-                <Text style={textStyles}>Nonprofit Login</Text>
+            <Box className='box-button' style={boxStyles}
+                  onClick={(e)=>setHasChosen('np')}>
+              <Image src={nonprofitIcon} style={imageStyles} />
+              <Text style={textStyles}>Nonprofit Login</Text>
             </Box>
 
-            <Box mx='auto' />
+            <Image src={waves} height='283px' width='50%' />
 
           </Flex>
-          }
-        </Flex>
+        }
+      </div>
     )
 };
 export default LoginHome;
