@@ -12,40 +12,6 @@ import LoginInfo from '../components/LoginInfo'
 function LoginHome(props) {
   const [hasChosen, setHasChosen] = useState('')
 
-    // EVERYTHING COMMENTED OUT NEEDS TO MOVE TO LOGININFO (IN COMPONENTS)
-    // const [username, setUsername] = useState('')
-    // const [password, setPassword] = useState('')
-
-    // const data = {
-    //     username: username, 
-    //     password: password
-    // }
-
-    // if (json_res) {
-    //     sessionStorage.setItem("id", json_res[0])
-    //     sessionStorage.setItem("shipper", true)
-    // }
-
-    // async function flask(flaskEndpoint, data) {
-    //     try {
-    //       const endpoint = `http://localhost:5000/api/${flaskEndpoint}`
-    //       const configs = {
-    //         method: 'POST',
-    //         body: JSON.stringify(data),
-    //         mode: 'cors',
-    //         headers: {'Content-type' : 'application/json'}
-    //       }
-    //       const res = await fetch(endpoint, configs);
-    //       const json_res = await res.json();
-    //       return json_res
-    //     } catch (err) {
-    //       console.log(err)
-    //     }
-    // }
-
-
-
-
     const boxStyles = {
         width: '300px',
         height: '300px',
@@ -85,7 +51,7 @@ function LoginHome(props) {
 
             <Box minWidth='50px' />
 
-            <Box style={boxStyles} onClick={(e)=>setHasChosen('nonprofit')}>
+            <Box style={boxStyles} onClick={(e)=>setHasChosen('np')}>
                 <Text style={textStyles}>Nonprofit Login</Text>
             </Box>
 
