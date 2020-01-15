@@ -9,3 +9,12 @@
     background: url("../images/waves1.png");
     background-repeat: repeat;
 }
+
+.box-button {
+    margin: 0;
+}
+
+.box-button:active {
+    padding-top: 2px;
+    padding-left: 4px;
+}

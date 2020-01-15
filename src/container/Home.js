@@ -18,9 +18,9 @@ function Home() {
         width: '300px',
         height: '300px',
         marginTop: '0px',
-        backgroundColor: '#dddddd',
+        backgroundColor: '#eeeeee',
         borderStyle: 'solid',
-        borderWidth: '1px',
+        borderWidth: '2px',
         borderRadius: '8px',
         borderColor: '#dddddd',
         boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
@@ -47,8 +47,8 @@ function Home() {
             <Box className='waves' height='263px' width='50%' />
             
             <Link to='/shipperLogin' style={{ textDecoration: 'none' }}>
-              <Box style={boxStyles}>
-              <Image src={shipper} height='200px' marginTop='30px' />
+              <Box className='box-button' style={boxStyles}>
+                <Image src={shipper} height='200px' marginTop='30px' />
                 <Text style={textStyles}>Shipper Login</Text>
               </Box>
             </Link>
@@ -56,7 +56,7 @@ function Home() {
             <Box minWidth='50px' />
 
             <Link to='/npLogin' style={{ textDecoration: 'none' }}>
-              <Box style={boxStyles}>
+              <Box className='box-button' style={boxStyles}>
                 <Image src={nonprofit} height='200px' marginTop='30px' />
                 <Text style={textStyles}>Nonprofit Login</Text>
               </Box>
