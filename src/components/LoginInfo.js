@@ -9,11 +9,15 @@ import waves from '../images/waves1.png';
 import shipperIcon from '../images/shipper1.png';
 import nonprofitIcon from '../images/ribbon.png';
 
+// component imports
+import SignUpInfo from './SignUpInfo'
+
 
 function LoginInfo(props) {
     // const [company, setCompany] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [newClient, setNewClient] = useState(false)
 
     let flaskEndpoint = props.hasChosen
 
@@ -96,6 +100,7 @@ function LoginInfo(props) {
 
     return(
         <div>
+          { newClient ? <SignUpInfo flask={flask} setID={props.setID} hasChosen={props.hasChosen}/> : 
           <Flex sx={{
                   flexWrap: 'row',
                   width: '100%',
@@ -142,7 +147,7 @@ function LoginInfo(props) {
                 <Flex justifyContent='space-between'>
                     <Button onClick={(e)=>flask((flaskEndpoint + "_login"), data)}>
                         Login</Button>
-                    <Button onClick={(e)=>flask((flaskEndpoint + "_create_account"), data)}>
+                    <Button onClick={(e)=>setNewClient(true)}>
                         Sign Up</Button>
                 </Flex>
             </Box>
@@ -150,6 +155,7 @@ function LoginInfo(props) {
             <Image src={waves} height='283px' width='50%' />
 
           </Flex>
+          }
         </div> 
     )
 };
