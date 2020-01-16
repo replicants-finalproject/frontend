@@ -64,6 +64,7 @@ function LoginHome(props) {
             </Box>
 
             <Box minWidth='50px' />
+            {/* <Image src={waves} height='283px' width='50%' /> */}
 
             <Box className='box-button' style={boxStyles}
                   onClick={(e)=>setHasChosen('np')}>
