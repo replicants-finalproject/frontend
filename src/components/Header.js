@@ -3,6 +3,8 @@ import React from 'react';
 // styling imports
 import { Flex, Box, Text } from 'rebass';
 
+import greenWaves from '../images/waves2.png';
+
 
 function Header() {
 
@@ -16,14 +18,14 @@ function Header() {
                 fontSize: '35px',
                 fontWeight: 'bold',
                 }}>
-            
-            <Box mx='auto' textAlign='right'/>
+
+            <Box mx='auto' />
 
             <Box width='1000px' textAlign='center'>
                 <Text>Ship For Charity</Text>
             </Box>
 
-            <Box mx='auto' textAlign='right'/>
+            <Box mx='auto' />
         </Flex>
   )
 };

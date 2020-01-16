@@ -52,7 +52,7 @@ function LoginInfo(props) {
         padding: '3%',
         textAlign: 'left',
         fontFamily: 'Open Sans',
-        backgroundColor: '#eeeeee',
+        backgroundColor: '#eeefff',
         borderStyle: 'solid',
         borderWidth: '2px',
         borderRadius: '8px',
@@ -61,7 +61,7 @@ function LoginInfo(props) {
     };
 
     const textStyles = {
-        padding: '10px 0px 25px 0px',
+        paddingBottom: '25px',
         color: 'rgb(0, 68, 170)',
         fontSize: '34px',
         fontWeight: 'bold'
