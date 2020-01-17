@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function NPNewRoute() {
+function NPNewRoutes() {
 
   return (
     <div>
@@ -18,4 +18,4 @@ function NPNewRoute() {
     </div>
   )
 };
-export default NPNewRoute;
+export default NPNewRoutes;

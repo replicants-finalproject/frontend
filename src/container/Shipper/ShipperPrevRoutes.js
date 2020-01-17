@@ -1,11 +1,11 @@
 import React from 'react';
 
 
-function ShipperPrevRoute() {
+function ShipperPrevRoutes() {
   return (
     <div>
       <p>ShipperPrevRoute Page</p>
     </div>
   )
 };
-export default ShipperPrevRoute;
+export default ShipperPrevRoutes;

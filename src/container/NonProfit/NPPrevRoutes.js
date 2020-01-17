@@ -1,11 +1,11 @@
 import React from 'react';
 
 
-function NPPrevRoute() {
+function NPPrevRoutes() {
   return (
     <div>
       <p>NPPrevRoute Page</p>
     </div>
   )
 };
-export default NPPrevRoute;
+export default NPPrevRoutes;

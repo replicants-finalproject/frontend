@@ -21,7 +21,7 @@ function LoginHome(props) {
           height: '310px',
           minWidth: '300px',
           marginTop: '0px',
-          backgroundColor: '#eeeeee',
+          backgroundColor: '#eeefff',
           borderStyle: 'solid',
           borderWidth: '2px',
           borderRadius: '8px',
@@ -57,13 +57,14 @@ function LoginHome(props) {
 
             <Image src={waves} height='283px' width='50%' />
             
-            <Box className='box-button' style={boxStyles} 
+            <Box className='box-button' style={boxStyles}
                   onClick={(e)=>setHasChosen('shipper')}>
               <Image src={shipperIcon} style={imageStyles} />
               <Text style={textStyles}>Shipper Login</Text>
             </Box>
 
             <Box minWidth='50px' />
+            {/* <Image src={waves} height='283px' width='50%' /> */}
 
             <Box className='box-button' style={boxStyles}
                   onClick={(e)=>setHasChosen('np')}>
