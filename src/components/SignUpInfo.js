@@ -108,7 +108,7 @@ function SignUpInfo(props) {
 
                     <Flex style={flexStyles}>
                         <label style={labelStyles}>Password:</label>
-                        <input style={inputStyles} 
+                        <input type="password" style={inputStyles} 
                                 onChange={(e)=>setPassword(String(e.target.value))} />
                     </Flex>
                     <br/>
