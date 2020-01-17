@@ -6,4 +6,4 @@ function ShipperOpenRoutes() {
             <p>Shipper Open Routes</p>
         </div>
     )
-}
+}export default ShipperOpenRoutes;

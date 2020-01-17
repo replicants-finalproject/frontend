@@ -50,52 +50,52 @@ function LoginInfo(props) {
     }
 
     const boxStyles = {
-        height: '310px',
-        minWidth: '650px',
-        marginTop: '0px',
-        padding: '3%',
-        textAlign: 'left',
-        fontFamily: 'Open Sans',
-        backgroundColor: '#eeefff',
-        borderStyle: 'solid',
-        borderWidth: '2px',
-        borderRadius: '8px',
-        borderColor: '#aaaaaa',
-        boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
+          height: '310px',
+          minWidth: '650px',
+          marginTop: '0px',
+          padding: '1% 2%',
+          textAlign: 'left',
+          fontFamily: 'Open Sans',
+          backgroundColor: '#eeeeee',
+          borderStyle: 'solid',
+          borderWidth: '2px',
+          borderRadius: '8px',
+          borderColor: '#aaaaaa',
+          boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
     };
 
     const textStyles = {
-        paddingBottom: '25px',
-        color: 'rgb(0, 68, 170)',
-        fontSize: '34px',
-        fontWeight: 'bold'
+          padding: '0px 0px 25px 0px',
+          color: 'rgb(0, 68, 170)',
+          fontSize: '34px',
+          fontWeight: 'bold'
     };
 
     const flexStyles = {
-      width: '350px',
-      justifyContent: 'space-between'
+          width: '350px',
+          justifyContent: 'space-between'
     }
 
     const labelStyles = {
-        width: '100px',
-        paddingRight: '10px',
-        color: '#000000',
-        fontFamily: 'Open Sans',
-        fontSize: '25px'
+          width: '100px',
+          paddingRight: '10px',
+          color: '#000000',
+          fontFamily: 'Open Sans',
+          fontSize: '25px'
     };
 
     const inputStyles = {
-        height: '30px',
-        width: '200px',
-        borderStyle: 'solid',
-        borderWidth: '2px',
-        borderColor: '#aaaaaa'
+          height: '30px',
+          width: '200px',
+          borderStyle: 'solid',
+          borderWidth: '2px',
+          borderColor: '#aaaaaa'
     };
 
     const imageStyles = {
-      height: '160px',
-      marginTop: '0px',
-      paddingBottom: '0px',
+        height: '160px',
+        marginTop: '30px',
+        paddingBottom: '0px',
     }
 
     return(
@@ -116,14 +116,10 @@ function LoginInfo(props) {
                 <Flex justifyContent='space-between'>
                   <div>
 
-                  { (props.hasChosen === 'shipper') ? 
-                      <Text style={textStyles}>Shipper Login</Text> : 
-                      <Text style={textStyles}>Nonprofit Login</Text> }
+                    { (props.hasChosen === 'shipper') ? 
+                        <Text style={textStyles}>Shipper Login</Text> : 
+                        <Text style={textStyles}>Nonprofit Login</Text> }
                     
-
-                    {/* <label>Company:</label>
-                    <input onChange={(e)=>setCompany(String(e.target.value))}></input> */}
-
                     <Flex style={flexStyles}>
                         <label style={labelStyles}>Username:</label>
                         <input style={inputStyles} onChange={(e)=>setUsername(String(e.target.value))} />
@@ -144,7 +140,7 @@ function LoginInfo(props) {
 
                 </Flex>
 
-                <Flex justifyContent='space-between'>
+                <Flex justifyContent='space-between' marginTop='49px'>
                     <Button onClick={(e)=>flask((flaskEndpoint + "_login"), data)}>
                         Login</Button>
                     <Button onClick={(e)=>setNewClient(true)}>
