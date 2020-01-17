@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function ShipperNewRoute() {
+function ShipperNewRoutes() {
   return (
     <div>
       <p>ShipperNewRoute Page</p>
@@ -16,4 +16,4 @@ function ShipperNewRoute() {
     </div>
   )
 };
-export default ShipperNewRoute;
+export default ShipperNewRoutes;

@@ -26,7 +26,7 @@ function SignUpInfo(props) {
         height: '310px',
         minWidth: '650px',
         marginTop: '0px',
-        padding: '2%',
+        padding: '1% 2%',
         textAlign: 'left',
         fontFamily: 'Open Sans',
         backgroundColor: '#eeeeee',
@@ -38,7 +38,7 @@ function SignUpInfo(props) {
     };
 
     const textStyles = {
-        padding: '10px 0px 25px 0px',
+        padding: '0px 0px 25px 0px',
         color: 'rgb(0, 68, 170)',
         fontSize: '34px',
         fontWeight: 'bold'
@@ -67,13 +67,13 @@ function SignUpInfo(props) {
 
     const imageStyles = {
       height: '160px',
-      marginTop: '0px',
+      marginTop: '30px',
       paddingBottom: '0px',
     }
 
     return(
         <div>
-            <Flex sx={{
+          <Flex sx={{
                   flexWrap: 'row',
                   width: '100%',
                   paddingTop: '10%',
@@ -92,19 +92,24 @@ function SignUpInfo(props) {
                       <Text style={textStyles}>Shipper Sign Up</Text> : 
                       <Text style={textStyles}>Nonprofit Sign Up</Text> }
                     
-                    {/* @ALEX -- THIS NEEDS EDITING!! Thanks  */}
-                    <label>Company:</label>
-                    <input onChange={(e)=>setCompany(String(e.target.value))}></input>
+                    <Flex style={flexStyles}>
+                        <label style={labelStyles}>Company:</label>
+                        <input style={inputStyles} 
+                                onChange={(e)=>setCompany(String(e.target.value))} />
+                    </Flex>
+                    <br/>
 
                     <Flex style={flexStyles}>
                         <label style={labelStyles}>Username:</label>
-                        <input style={inputStyles} onChange={(e)=>setUsername(String(e.target.value))} />
+                        <input style={inputStyles} 
+                                onChange={(e)=>setUsername(String(e.target.value))} />
                     </Flex>
                     <br/>
 
                     <Flex style={flexStyles}>
                         <label style={labelStyles}>Password:</label>
-                        <input style={inputStyles} onChange={(e)=>setPassword(String(e.target.value))} />
+                        <input style={inputStyles} 
+                                onChange={(e)=>setPassword(String(e.target.value))} />
                     </Flex>
                     <br/>
                   </div>
@@ -116,7 +121,7 @@ function SignUpInfo(props) {
 
                 </Flex>
 
-                <Flex justifyContent='space-between'>
+                <Flex justifyContent='right'>
                     <Button onClick={(e)=>props.flask((flaskEndpoint + "_create_account"), data)}>
                         Create Account</Button>
                 </Flex>
