@@ -7,11 +7,11 @@ import { Route } from 'react-router-dom';
 import Home from '../container/Home';
 
 import ShipperPrevRoutes from '../container/Shipper/ShipperPrevRoutes';
-import ShipperNewRoutes from '../container/Shipper/ShipperNewRoutes';
+import ShipperNewRoute from '../container/Shipper/ShipperNewRoute';
 import ShipperOpenRoutes from '../container/Shipper/ShipperOpenRoutes';
 
 import NPPrevRoutes from '../container/NonProfit/NPPrevRoutes';
-import NPNewRoutes from '../container/NonProfit/NPNewRoutes'
+import NPNewRoute from '../container/NonProfit/NPNewRoute'
 
 
 function Router() {
@@ -20,11 +20,11 @@ function Router() {
         <Route path="/home" component={Home}/>
 
         <Route path="/shipper/previousroutes" component={ShipperPrevRoutes}/>
-        <Route path="/shipper/newroutes" component={ShipperNewRoutes}/>
+        <Route path="/shipper/newroute" component={ShipperNewRoute}/>
         <Route path="/shipper/openroutes" component={ShipperOpenRoutes}/>
 
         <Route path="/nonprofit/previousroutes" component={NPPrevRoutes}/>
-        <Route path="/nonprofit/newroutes" component={NPNewRoutes}/>
+        <Route path="/nonprofit/newroute" component={NPNewRoute}/>
     </div>
   )
 };
