@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+// styling
+import { Flex, Box, Text, Image, Button } from 'rebass';
+
 
 function ShipperNewRoute() {
   const [departureLocation, setDepartureLocation] = useState('');
@@ -39,25 +42,123 @@ function ShipperNewRoute() {
     } catch (err) {
       console.log(err)
     }
-}
+  }
+
+  const boxStyles = {
+      minWidth: '650px',
+      marginTop: '0px',
+      padding: '1% 2%',
+      textAlign: 'left',
+      fontFamily: 'Open Sans',
+      backgroundColor: '#eeefff',
+      borderStyle: 'solid',
+      borderWidth: '2px',
+      borderRadius: '8px',
+      borderColor: '#aaaaaa',
+      boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
+  };
+
+  const textStyles = {
+      padding: '0px 0px 5px 0px',
+      color: 'rgb(0, 68, 170)',
+      fontSize: '34px',
+      fontWeight: 'bold'
+  };
+
+  const flexStyles = {
+      width: '350px',
+      justifyContent: 'space-between'
+  }
+
+  const labelStyles = {
+      width: '100px',
+      color: '#000000',
+      fontFamily: 'Open Sans',
+      fontSize: '21px'
+  };
+
+  const inputStyles = {
+      height: '35px',
+      width: '200px',
+      margin: '5px',
+      paddingLeft: '10px',
+      fontSize: '17px',
+      borderStyle: 'solid',
+      borderWidth: '2px',
+      borderColor: '#aaaaaa'
+  };
 
   return (
-    <div>
-      <p>ShipperNewRoute Page</p>
+    <Flex sx={{ flexWrap: 'row',
+                width: '100%',
+                paddingTop: '10%',
+                textAlign: 'center',
+                justifyContent: 'center',
+                alignItems: 'center'}}>
 
-      <label>Enter route information below: </label>
+      <Box style={boxStyles}>
+        <Box textAlign='center'>
+          <Text style={textStyles}>Create New Route</Text>
+        </Box><br/>
 
-      <input placeholder='Departure Location' onChange={(e)=>setDepartureLocation(e.target.value)}/>
-      <input placeholder='Departure Date' onChange={(e)=>setDepartureDate(e.target.value)}/>
-      <input placeholder='Arrival Location' onChange={(e)=>setArrivalLocation(e.target.value)}/>
-      <input placeholder='Arrival Date' onChange={(e)=>setArrivalDate(e.target.value)}/>
-      <input placeholder='Available Containers' onChange={(e)=>setAvailableContainers(e.target.value)}/>
+        <label style={labelStyles} fontWeight='bold'>
+          Enter route information below: 
+        </label><br/><br/>
 
-      <button onClick={(e)=>flask(flaskEndpoint, data)}>Enter Route</button>
-      <hr/>
-      {success ? <p>Route successfully added!</p> : <p></p>  }
+        <Flex width='100%'>
+          <Box width={1/2}>
+            <label style={labelStyles} fontWeight='bold'>
+              Departure Location
+            </label><br/><br/>
+            <label style={labelStyles} fontWeight='bold'>
+              Departure Date
+            </label>
+          </Box>
+          <Box>
+            <input style={inputStyles} placeholder='Location' 
+                    onChange={(e)=>setDepartureLocation(e.target.value)}/>
+            <br/>
+            <input style={inputStyles} placeholder='Date' 
+                    onChange={(e)=>setDepartureDate(e.target.value)}/>
+          </Box>
+        </Flex>
 
-    </div>
+        <Flex width='100%'>
+          <Box width={1/2}>
+            <label style={labelStyles} fontWeight='bold'>
+              Arrival Location
+            </label><br/><br/>
+            <label style={labelStyles} fontWeight='bold'>
+              Arrival Date
+            </label>
+          </Box>
+          <Box>    
+            <input style={inputStyles} placeholder='Location' 
+                    onChange={(e)=>setArrivalLocation(e.target.value)}/>
+            <br/>
+            <input style={inputStyles} placeholder='Date' 
+                    onChange={(e)=>setArrivalDate(e.target.value)}/>
+          </Box>
+        </Flex>
+
+        <Flex width='100%'>
+          <Box width={1/2}>
+            <label style={labelStyles} fontWeight='bold'>
+              Availability
+            </label>
+          </Box>
+          <Box>
+            <input style={inputStyles} placeholder='Available Containers' 
+                onChange={(e)=>setAvailableContainers(e.target.value)}/>
+          </Box>
+        </Flex>
+
+        <Button onClick={(e)=>flask(flaskEndpoint, data)}>Enter Route</Button>
+        <br/>
+        {success ? <p>Route successfully added!</p> : <p></p>  }
+        <br/>
+      </Box>
+    </Flex>
   )
 };
 export default ShipperNewRoute;

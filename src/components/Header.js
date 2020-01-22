@@ -18,11 +18,10 @@ function Header(props) {
 
   let userType = sessionStorage.getItem('user_type')
 
-  const headerLinkStyles = {
-    paddingTop: '10px',
+  const homeLinkStyles = {
     color: '#ffffff',
     fontFamily: 'Open Sans',
-    fontSize: '20px',
+    fontSize: '32px',
     fontWeight: 'bold',
     textDecoration: 'none'
   }
@@ -32,9 +31,10 @@ function Header(props) {
     width: '55px',
     marginTop: '-4px',
     marginRight: '15px',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#eeeeff',
     borderStyle: 'solid',
-    borderRadius: '8px'
+    borderColor: '#eeeeff',
+    borderRadius: '6px'
   }
 
   return (
@@ -43,20 +43,14 @@ function Header(props) {
               height: '70px',
               padding: '12px 0 0 0',
               bg: 'rgb(0, 51, 128)',
-              color: '#ffffff',
-              fontFamily: 'Open Sans',
-              fontSize: '32px',
-              fontWeight: 'bold',
               justifyContent: 'center'
               }}>
 
         <Flex width='900px' justifyContent='space-between'>
-          <Text>Ship For Charity</Text>
+          <Text style={homeLinkStyles}>Ship For Charity</Text>
 
           { (userType === 'shipper') && <ShipperHeader /> } 
           { (userType === 'np') &&  <NPHeader /> }
-
-          {/* <Link style={headerLinkStyles}>\__||||__/</Link> */}
 
           <Box styles={iconStyles}>
             { (userType === null) && (<div>
