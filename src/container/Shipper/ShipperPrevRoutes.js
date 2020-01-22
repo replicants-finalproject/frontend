@@ -38,7 +38,6 @@ function ShipperPrevRoutes() {
         <p> ArrivalDate: {data[5]} </p>
         <p> TotalContainers: {data[6]} </p>
         <p> AvailableContainers: {data[7]} </p>
-        <button>Select Route</button>
       </Flex>
     ))
   } else {
