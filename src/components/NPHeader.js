@@ -23,6 +23,12 @@ const headerLinkStyles = {
 
 
 function NPHeader() {
+
+
+  function logout() {
+    sessionStorage.setItem('id', '')
+  }
+
   return (
     <nav>
       <Flex>
@@ -32,13 +38,12 @@ function NPHeader() {
         <Box width='20px' />
 
         <Link to='/nonprofit/newroute' style={headerLinkStyles}>
-          New Routes</Link>
+          New Route</Link>
 
         <Box width='20px' />
 
-        <Link style={headerLinkStyles}>
+        <Link onClick={(e)=>logout()} style={headerLinkStyles}>
           Logout</Link>
-
       </Flex>
     </nav>
   )

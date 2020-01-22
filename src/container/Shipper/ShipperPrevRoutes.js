@@ -1,4 +1,5 @@
 import React from 'react';
+import {Flex} from 'rebass';
 
 
 function ShipperPrevRoutes() {
@@ -20,14 +21,45 @@ function ShipperPrevRoutes() {
         }
         const res = await fetch(endpoint, configs);
         const json_res = await res.json();
-        // if (json_res) {
-        // }
+        return json_res['Routes']
       } catch (err) {
         console.log(err)
       }
   }
 
-  let response = flask(flaskEndpoint, data)
+  let response
+  if (response) {
+    const openRoutes = response.map((shipperAccountID, departureLocation, departureDate, arrivalLocation, arrivalDate, totalContainers, availableContainers) => (
+      <Flex>
+        <p> {shipperAccountID} </p>
+        <p> {departureLocation} </p>
+        <p> {departureDate} </p>
+        <p> {arrivalLocation} </p>
+        <p> {arrivalDate} </p>
+        <p> {totalContainers} </p>
+        <p> {availableContainers} </p>
+        <button>Select Route</button>
+      </Flex>
+    ))
+  } else {
+    let response = flask(flaskEndpoint, data)
+  }
+
+
+  console.log(response)
+
+  // const openRoutes = response.map((shipperAccountID, departureLocation, departureDate, arrivalLocation, arrivalDate, totalContainers, availableContainers) => (
+  //   <Flex>
+  //     <p> {shipperAccountID} </p>
+  //     <p> {departureLocation} </p>
+  //     <p> {departureDate} </p>
+  //     <p> {arrivalLocation} </p>
+  //     <p> {arrivalDate} </p>
+  //     <p> {totalContainers} </p>
+  //     <p> {availableContainers} </p>
+  //     <button>Select Route</button>
+  //   </Flex>
+  // ))
 
   return (
     <div>
