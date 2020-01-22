@@ -72,10 +72,9 @@ function ShipperNewRoute() {
 
   const labelStyles = {
       width: '100px',
-      padding: '0px 0px 0px 10px',
       color: '#000000',
       fontFamily: 'Open Sans',
-      fontSize: '25px'
+      fontSize: '21px'
   };
 
   const inputStyles = {
@@ -110,7 +109,7 @@ function ShipperNewRoute() {
           <Box width={1/2}>
             <label style={labelStyles} fontWeight='bold'>
               Departure Location
-            </label><br/>
+            </label><br/><br/>
             <label style={labelStyles} fontWeight='bold'>
               Departure Date
             </label>
@@ -128,7 +127,7 @@ function ShipperNewRoute() {
           <Box width={1/2}>
             <label style={labelStyles} fontWeight='bold'>
               Arrival Location
-            </label><br/>
+            </label><br/><br/>
             <label style={labelStyles} fontWeight='bold'>
               Arrival Date
             </label>
@@ -143,7 +142,7 @@ function ShipperNewRoute() {
         </Flex>
 
         <Flex width='100%'>
-          <Box width={1/3}>
+          <Box width={1/2}>
             <label style={labelStyles} fontWeight='bold'>
               Availability
             </label>
