@@ -59,7 +59,7 @@ function ShipperNewRoute() {
   };
 
   const textStyles = {
-      padding: '0px 0px 25px 0px',
+      padding: '0px 0px 5px 0px',
       color: 'rgb(0, 68, 170)',
       fontSize: '34px',
       fontWeight: 'bold'
@@ -156,6 +156,7 @@ function ShipperNewRoute() {
         <Button onClick={(e)=>flask(flaskEndpoint, data)}>Enter Route</Button>
         <br/>
         {success ? <p>Route successfully added!</p> : <p></p>  }
+        <br/>
       </Box>
     </Flex>
   )
