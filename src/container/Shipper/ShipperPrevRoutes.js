@@ -46,8 +46,8 @@ function ShipperPrevRoutes() {
       borderRadius: '6px',
       borderColor: '#aaaaaa',
       boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
-      justifyContent: 'center',
-      alignItems: 'center'
+      justifyContent: 'center'
+      // alignItems: 'center'
   };
 
   const textStyles = {
@@ -60,26 +60,59 @@ function ShipperPrevRoutes() {
   const gridStyles = {
     width: '80%',
     margin: '20px auto',
-    // padding: '10px',
-    backgroundColor: '#ffffff',
-    color: '#000000',
+    paddingTop: '10px',
+    backgroundColor: 'rgb(0, 51, 128)',
     fontSize: '15px',
     borderStyle: 'solid',
-    borderWidth: '1px',
-    borderRadius: '2px'
+    borderWidth: '0px',
+    borderRadius: '4px',
+    boxShadow: '1px 1px 7px -2px rgb(0, 51, 128)',
   };
 
   const labelStyles = {
-      color: '#000000',
+      paddingLeft: '10px',
+      color: '#ffffff',
       fontSize: '21px'
   };
 
+  const columnStyles = {
+      width: '50%',
+      margin: '0px',
+      padding: '0px',
+      borderStyle: 'solid',
+      borderColor: '#0000000',
+      borderWidth: '0px 1px 0px 1px',
+  };
+
   const cellStyles = {
-    color: '#000000',
+      width: '100%',
+      height: '30px',
+      paddingLeft: '3px',
+      backgroundColor: '#ffffff',
+      color: '#000000',
+      fontSize: '16px',
+      borderStyle: 'solid',
+      borderWidth: '0px 0px 1px 0px',
+  };
+
+  const cellLeftStyles = {
+      width: '50%',
+      height: '30px',
+      paddingLeft: '3px',
+      color: '#000000',
+      fontSize: '16px',
+      borderStyle: 'solid',
+      borderWidth: '0px 1px 1px 0px',
+  };
+
+  const cellRightStyles = {
+    width: '50%',
+    height: '30px',
     paddingLeft: '3px',
-    fontSize: '15px',
+    color: '#000000',
+    fontSize: '16px',
     borderStyle: 'solid',
-    borderWidth: '0px 1px 1px 1px',
+    borderWidth: '0px 0px 1px 0px',
   };
 
   let openRoutes = <div></div>;
@@ -90,18 +123,28 @@ function ShipperPrevRoutes() {
       <Box style={gridStyles}>
 
         <div style={labelStyles}><p> Shipper ID: {data[1]}</p></div>
-        <br/>
-        <Flex><div style={cellStyles}><p> DepartureLocation:</p></div><div style={cellStyles}><p>{ data[2] }</p></div></Flex>
-        <br/>
-        <Flex><div style={cellStyles}><p> DepartureDate:</p></div> <div style={cellStyles}><p>{ data[3] }</p></div></Flex>
-        <br/>
-        <Flex><div style={cellStyles}><p> ArrivalLocation:</p></div> <div style={cellStyles}><p>{ data[4] }</p></div></Flex>
-        <br/>
-        {/* <p> DepartureDate: {data[3]} </p>
-        <p> ArrivalLocation: {data[4]} </p>
-        <p> ArrivalDate: {data[5]} </p>
-        <p> TotalContainers: {data[6]} </p>
-        <p> AvailableContainers: {data[7]} </p> */}
+          <br/>
+
+        <Flex>
+          <Box style={columnStyles}>
+            <div style={cellStyles}><p>Departure Location:</p></div>
+            <div style={cellStyles}><p>Departure Date:</p></div>
+            <div style={cellStyles}><p>Arrival Location:</p></div>
+            <div style={cellStyles}><p>Arrival Date:</p></div>
+            <div style={cellStyles}><p>Total Containers:</p></div>
+            <div style={cellStyles}><p>Arrival Containers:</p></div>
+          </Box>
+
+          <Box style={columnStyles}>
+            <div style={cellStyles}><p>{ data[2] }</p></div>
+            <div style={cellStyles}><p>{ data[3] }</p></div>
+            <div style={cellStyles}><p>{ data[4] }</p></div>
+            <div style={cellStyles}><p>{ data[5] }</p></div>
+            <div style={cellStyles}><p>{ data[6] }</p></div>
+            <div style={cellStyles}><p>{ data[7] }</p></div>
+          </Box>
+        </Flex>
+
         <br/>
       </Box>
     ))
