@@ -33,19 +33,7 @@ function NPNewRoute() {
     }
   }
 
-
-  // return (
-  //   <div>
-  //     <p>NP New Route Page</p>
-  //     <label>Enter route below: </label>
-  //     <input placeholder='Departure Location' onClick={(e)=>setDepartureLocation(e.target.value)}/>
-  //     <input placeholder='Arrival Location' onClick={(e)=>setArrivalLocation(e.target.value)}/>
-  //     <input placeholder='Arrival Date' onClick={(e)=>setArrivalDate(e.target.value)}/>
-  //     <button onClick={(e)=>flask(flaskEndpoint, data)} >Search Routes</button>
-  //   </div>
-  // )
-
-    const boxStyles = {
+  const boxStyles = {
       minWidth: '650px',
       marginTop: '0px',
       padding: '1% 2%',
@@ -111,16 +99,11 @@ function NPNewRoute() {
             <label style={labelStyles} fontWeight='bold'>
               Departure Location
             </label><br/><br/>
-            {/* <label style={labelStyles} fontWeight='bold'>
-              Departure Date
-            </label> */}
           </Box>
           <Box>
             <input style={inputStyles} placeholder='Location' 
                     onChange={(e)=>setDepartureLocation(e.target.value)}/>
             <br/>
-            {/* <input style={inputStyles} placeholder='Date' 
-                    onChange={(e)=>setDepartureDate(e.target.value)}/> */}
           </Box>
         </Flex>
 
