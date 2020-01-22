@@ -37,11 +37,7 @@ function NPHeader() {
         <Box width='20px' />
 
         <Link to='/nonprofit/newroute' style={headerLinkStyles}>
-<<<<<<< HEAD
           New Route</Link>
-=======
-          New Routes</Link>
->>>>>>> 7b87a82b042c06081cd30e5e9fb9cffd3ef501d9
 
         <Box width='20px' />
 

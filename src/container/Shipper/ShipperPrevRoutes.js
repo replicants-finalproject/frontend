@@ -20,8 +20,7 @@ function ShipperPrevRoutes() {
         }
         const res = await fetch(endpoint, configs);
         const json_res = await res.json();
-        // if (json_res) {
-        // }
+        return json_res
       } catch (err) {
         console.log(err)
       }
@@ -32,6 +31,7 @@ function ShipperPrevRoutes() {
   return (
     <div>
       <p>PREVIOUS ROUTES</p>
+      { response }
     </div>
   )
 };
