@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Flex} from 'rebass';
 
 
 function ShipperPrevRoutes() {
+  const [previousRoutes, setPreviousRoutes] = useState([])
 
   let flaskEndpoint = 'shipper_previous_routes'
   let shipperAccountID = sessionStorage.getItem('id')
-  let data = {
-      shipperAccountID: shipperAccountID
-  }
+  let data = {shipperAccountID: shipperAccountID}
 
   async function flask(flaskEndpoint, data) {
       try {
@@ -21,49 +20,36 @@ function ShipperPrevRoutes() {
         }
         const res = await fetch(endpoint, configs);
         const json_res = await res.json();
-        return json_res['Routes']
+        setPreviousRoutes(json_res['Routes'])
       } catch (err) {
         console.log(err)
       }
   }
 
-  let response
-  if (response) {
-    const openRoutes = response.map((shipperAccountID, departureLocation, departureDate, arrivalLocation, arrivalDate, totalContainers, availableContainers) => (
-      <Flex>
-        <p> {shipperAccountID} </p>
-        <p> {departureLocation} </p>
-        <p> {departureDate} </p>
-        <p> {arrivalLocation} </p>
-        <p> {arrivalDate} </p>
-        <p> {totalContainers} </p>
-        <p> {availableContainers} </p>
+  if (previousRoutes.length > 0) {
+    console.log("Previous Routes")
+    console.log(previousRoutes)
+    let openRoutes = previousRoutes.map((data, idx) => (
+      <Flex key={idx}>
+        <p> Shipper ID: {data[1]} </p>
+        <p> DepartureLocation: {data[2]} </p>
+        <p> DepartureDate: {data[3]} </p>
+        <p> ArrivalLocation: {data[4]} </p>
+        <p> ArrivalDate: {data[5]} </p>
+        <p> TotalContainers: {data[6]} </p>
+        <p> AvailableContainers: {data[7]} </p>
         <button>Select Route</button>
       </Flex>
     ))
   } else {
-    let response = flask(flaskEndpoint, data)
+    flask(flaskEndpoint, data)
   }
 
-
-  console.log(response)
-
-  // const openRoutes = response.map((shipperAccountID, departureLocation, departureDate, arrivalLocation, arrivalDate, totalContainers, availableContainers) => (
-  //   <Flex>
-  //     <p> {shipperAccountID} </p>
-  //     <p> {departureLocation} </p>
-  //     <p> {departureDate} </p>
-  //     <p> {arrivalLocation} </p>
-  //     <p> {arrivalDate} </p>
-  //     <p> {totalContainers} </p>
-  //     <p> {availableContainers} </p>
-  //     <button>Select Route</button>
-  //   </Flex>
-  // ))
 
   return (
     <div>
       <p>PREVIOUS ROUTES</p>
+      {/* <p>{ openRoutes }</p> */}
     </div>
   )
 };
