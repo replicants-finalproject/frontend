@@ -56,8 +56,6 @@ function Header(props) {
           { (userType === 'shipper') && <ShipperHeader /> } 
           { (userType === 'np') &&  <NPHeader /> }
 
-          {/* <Link style={headerLinkStyles}>\__||||__/</Link> */}
-
           <Box styles={iconStyles}>
             { (userType === null) && (<div>
                                         <Image src={shipperIcon} style={iconStyles} /> 

@@ -65,7 +65,7 @@ function LoginInfo(props) {
     };
 
     const textStyles = {
-          padding: '0px 0px 25px 0px',
+          padding: '10px 0px 25px 0px',
           color: 'rgb(0, 68, 170)',
           fontSize: '34px',
           fontWeight: 'bold'
@@ -140,7 +140,7 @@ function LoginInfo(props) {
 
                 </Flex>
 
-                <Flex justifyContent='space-between' marginTop='49px'>
+                <Flex justifyContent='space-between' marginTop='40px'>
                     <Button onClick={(e)=>flask((flaskEndpoint + "_login"), data)}>
                         Login</Button>
                     <Button onClick={(e)=>setNewClient(true)}>
