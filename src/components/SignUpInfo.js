@@ -38,7 +38,7 @@ function SignUpInfo(props) {
     };
 
     const textStyles = {
-        padding: '0px 0px 25px 0px',
+        padding: '10px 0px 25px 0px',
         color: 'rgb(0, 68, 170)',
         fontSize: '34px',
         fontWeight: 'bold'
@@ -84,7 +84,6 @@ function SignUpInfo(props) {
             <Image src={waves} height='283px' width='50%' />
             
             <Box style={boxStyles}>
-
                 <Flex justifyContent='space-between'>
                   <div>
 
@@ -117,8 +116,6 @@ function SignUpInfo(props) {
                   { (props.hasChosen === 'shipper') ? 
                       <Image src={shipperIcon} style={imageStyles} /> : 
                       <Image src={nonprofitIcon} style={imageStyles} /> }
-                  
-
                 </Flex>
 
                 <Flex justifyContent='right'>
