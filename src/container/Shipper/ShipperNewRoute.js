@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // styling
-import { Flex, Box, Text, Image, Button } from 'rebass';
+import { Flex, Box, Text, Button } from 'rebass';
 
 
 function ShipperNewRoute() {
