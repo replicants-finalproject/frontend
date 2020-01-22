@@ -30,7 +30,7 @@ function NPHeader() {
 
         <Box width='20px' />
 
-        <Link to='/nonprofit/newroutes' style={headerLinkStyles}>
+        <Link to='/nonprofit/newroute' style={headerLinkStyles}>
           New Routes</Link>
 
         <Box width='20px' />
