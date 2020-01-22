@@ -26,10 +26,12 @@ function ShipperPrevRoutes() {
       }
   }
 
+
+  let openRoutes = <div></div>;
   if (previousRoutes.length > 0) {
     console.log("Previous Routes")
     console.log(previousRoutes)
-    let openRoutes = previousRoutes.map((data, idx) => (
+    openRoutes = previousRoutes.map((data, idx) => (
       <Flex key={idx}>
         <p> Shipper ID: {data[1]} </p>
         <p> DepartureLocation: {data[2]} </p>
@@ -38,7 +40,6 @@ function ShipperPrevRoutes() {
         <p> ArrivalDate: {data[5]} </p>
         <p> TotalContainers: {data[6]} </p>
         <p> AvailableContainers: {data[7]} </p>
-        <button>Select Route</button>
       </Flex>
     ))
   } else {
@@ -49,7 +50,7 @@ function ShipperPrevRoutes() {
   return (
     <div>
       <p>PREVIOUS ROUTES</p>
-      {/* <p>{ openRoutes }</p> */}
+      <p>{ openRoutes }</p>
     </div>
   )
 };
