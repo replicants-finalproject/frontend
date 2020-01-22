@@ -11,7 +11,7 @@ import ShipperNewRoute from '../container/Shipper/ShipperNewRoute';
 import ShipperOpenRoutes from '../container/Shipper/ShipperOpenRoutes';
 
 import NPPrevRoutes from '../container/NonProfit/NPPrevRoutes';
-import NPNewRoute from '../container/NonProfit/NPNewRoute'
+import NPNewRoute from '../container/NonProfit/NPNewRoute';
 
 
 function Router() {

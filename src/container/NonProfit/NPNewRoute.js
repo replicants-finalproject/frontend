@@ -2,10 +2,9 @@ import React from 'react';
 
 
 function NPNewRoute() {
-
   return (
     <div>
-      <p>NPNewRoute Page</p>
+      <p>NP New Route Page</p>
       <label>Enter route below: </label>
       <input key={'starting_location'}>Enter location</input>
       <p>to</p>
