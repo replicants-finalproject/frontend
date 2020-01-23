@@ -52,10 +52,8 @@ function LoginInfo(props) {
     // Search button works with keyboard ENTER or RETURN
     const onFormSubmit = e => {
       e.preventDefault();
-      // getSearchData(searchRoute, searchTerm, setSearchData);
       flask((flaskEndpoint + "_login"), data);
-      console.log("CGHJ");
-    }
+    };
 
     const containerStyles = { 
       flexWrap: 'row',
