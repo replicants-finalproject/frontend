@@ -49,17 +49,26 @@ function LoginInfo(props) {
         }
     }
 
+    const containerStyles = { 
+      flexWrap: 'row',
+      width: '100%',
+      paddingTop: '10%',
+      textAlign: 'center',
+      justifyContent: 'center',
+      alignItems: 'center'
+    };
+
     const boxStyles = {
           height: '310px',
           minWidth: '650px',
           marginTop: '0px',
           padding: '1% 2%',
           textAlign: 'left',
-          fontFamily: 'Open Sans',
+          fontFamily: 'Work Sans',
           backgroundColor: '#eeefff',
           borderStyle: 'solid',
           borderWidth: '2px',
-          borderRadius: '8px',
+          borderRadius: '6px',
           borderColor: '#aaaaaa',
           boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
     };
@@ -80,7 +89,7 @@ function LoginInfo(props) {
           width: '100px',
           paddingRight: '10px',
           color: '#000000',
-          fontFamily: 'Open Sans',
+          fontFamily: 'Work Sans',
           fontSize: '25px'
     };
 
@@ -99,15 +108,9 @@ function LoginInfo(props) {
     }
 
     return(
-        <div>
-          { newClient ? <SignUpInfo flask={flask} setID={props.setID} hasChosen={props.hasChosen}/> : 
-          <Flex sx={{
-                  flexWrap: 'row',
-                  width: '100%',
-                  paddingTop: '10%',
-                  textAlign: 'center',
-                  justifyContent: 'center',
-                  alignItems: 'center'}}>
+      <div>
+        { newClient ? <SignUpInfo flask={flask} setID={props.setID} hasChosen={props.hasChosen}/> : 
+          <Flex style={containerStyles}>
 
             <Image src={waves} height='283px' width='50%' />
             
@@ -122,13 +125,15 @@ function LoginInfo(props) {
                     
                     <Flex style={flexStyles}>
                         <label style={labelStyles}>Username:</label>
-                        <input style={inputStyles} onChange={(e)=>setUsername(String(e.target.value))} />
+                        <input style={inputStyles} 
+                                onChange={(e)=>setUsername(String(e.target.value))} />
                     </Flex>
                     <br/>
 
                     <Flex style={flexStyles}>
                         <label style={labelStyles}>Password:</label>
-                        <input type="password" style={inputStyles} onChange={(e)=>setPassword(String(e.target.value))} />
+                        <input type="password" style={inputStyles} 
+                                onChange={(e)=>setPassword(String(e.target.value))} />
                     </Flex>
                     <br/>
                   </div>
@@ -152,7 +157,7 @@ function LoginInfo(props) {
 
           </Flex>
           }
-        </div> 
+      </div> 
     )
 };
 export default LoginInfo;

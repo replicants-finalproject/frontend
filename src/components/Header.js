@@ -20,8 +20,8 @@ function Header(props) {
 
   const homeLinkStyles = {
     color: '#ffffff',
-    fontFamily: 'Open Sans',
-    fontSize: '32px',
+    fontFamily: 'Work Sans',
+    fontSize: '40px',
     fontWeight: 'bold',
     textDecoration: 'none'
   }
