@@ -9,12 +9,22 @@ function NPNewRoute() {
   const [arrivalLocation, setArrivalLocation] = useState('');
   const [arrivalDate, setArrivalDate] = useState('');
   const [openRoutes, setOpenRoutes] = useState([]);
+  const [routeID, setRouteID] = useState('');
+  const [containers, setContainers] = useState('');
 
-  let flaskEndpoint = 'np_new_route';
-  let data = {
+  let searchFlaskEndpoint = 'np_search_routes';
+  let searchData = {
     departureLocation: departureLocation,
     arrivalLocation: arrivalLocation,
     arrivalDate: arrivalDate
+  }
+
+  let saveFlaskEndpoint = "np_new_route";
+  let npAccountID = sessionStorage.getItem('id')
+  let saveData = {
+    npAccountID : npAccountID,
+    routeID : routeID,
+    containers : containers
   }
 
   async function flask(flaskEndpoint, data) {
@@ -30,11 +40,20 @@ function NPNewRoute() {
       const json_res = await res.json();
       console.log("Json_res")
       console.log(json_res)
-      setOpenRoutes(json_res["Open routes"])
+      setOpenRoutes(json_res["Non-profit Open routes"])
     } catch (err) {
       console.log(err)
     }
   }
+
+  function saveAndSend(id, flaskEndpoint, data) {
+    setRouteID(id)
+    console.log('data')
+    console.log(data)
+    flask(flaskEndpoint, data)
+  }
+
+  
 
   const containerStyles = { 
     flexWrap: 'row',
@@ -132,8 +151,8 @@ function NPNewRoute() {
 
         <Flex justifyContent='space-evenly'>
           <div style={label2Styles}><p> Shipper ID: {data[1]}</p></div>
-          <input style={inputStyles} placeholder='Number of Containers'/>
-          <Button>Select Route</Button>
+          <input style={inputStyles} placeholder='Number of Containers' onChange={(e)=>setContainers(e.target.value)}/>
+          <Button onClick={(e)=>saveAndSend(data[0], saveFlaskEndpoint, saveData)}>Select Route</Button>
         </Flex>
         <br/>
 
@@ -144,7 +163,7 @@ function NPNewRoute() {
             <div style={cellStyles}><p>Arrival Location</p></div>
             <div style={cellStyles}><p>Arrival Date</p></div>
             <div style={cellStyles}><p>Total Containers</p></div>
-            <div style={cellStyles}><p>Arrival Containers</p></div>
+            <div style={cellStyles}><p>Available Containers</p></div>
           </Box>
 
           <Box style={columnStyles}>
@@ -206,7 +225,7 @@ function NPNewRoute() {
             </Box>
           </Flex>
 
-          <Button onClick={(e)=>flask(flaskEndpoint, data)}>Search Routes</Button>
+          <Button onClick={(e)=>flask(searchFlaskEndpoint, searchData)}>Search Routes</Button>
           <br/>
           <br/>
         </Box>
