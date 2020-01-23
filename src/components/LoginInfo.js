@@ -54,6 +54,7 @@ function LoginInfo(props) {
       e.preventDefault();
       // getSearchData(searchRoute, searchTerm, setSearchData);
       flask((flaskEndpoint + "_login"), data);
+      console.log("CGHJ");
     }
 
     const containerStyles = { 
@@ -122,7 +123,7 @@ function LoginInfo(props) {
             <Image src={waves} height='283px' width='50%' />
             
             <Box style={boxStyles}>
-
+              <form onSubmit={e => onFormSubmit(e)}>
                 <Flex justifyContent='space-between'>
                   <div>
 
@@ -153,14 +154,10 @@ function LoginInfo(props) {
                 </Flex>
 
                 <Flex justifyContent='space-between' marginTop='40px'>
-
-                <form onSubmit={e => onFormSubmit(e)}>
                     <Button type='submit'>Login</Button>
-                </form>
-
-                    <Button onClick={(e)=>setNewClient(true)}>
-                        Sign Up</Button>
+                    <Button onClick={(e)=>setNewClient(true)}>Sign Up</Button>
                 </Flex>
+              </form>
             </Box>
             
             <Image src={waves} height='283px' width='50%' />
