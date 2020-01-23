@@ -33,7 +33,6 @@ function NPNewRoute() {
     }
   }
 
-<<<<<<< HEAD
   let showOpenRoutes = <div></div>;
   if (openRoutes.length > 0) {
     console.log("Open Routes")
@@ -45,7 +44,7 @@ function NPNewRoute() {
   } else {
     flask(flaskEndpoint, data)
   }
-=======
+  
   const containerStyles = { 
     flexWrap: 'row',
     width: '100%',
@@ -54,7 +53,6 @@ function NPNewRoute() {
     justifyContent: 'center',
     alignItems: 'center'
   };
->>>>>>> 05896f3a444e6f5a3ca0b73be265654670660ef7
 
   const boxStyles = {
       minWidth: '600px',
@@ -96,18 +94,7 @@ function NPNewRoute() {
   };
 
   return (
-<<<<<<< HEAD
-    <div>
-    <Flex sx={{ flexWrap: 'row',
-                width: '100%',
-                paddingTop: '10%',
-                textAlign: 'center',
-                justifyContent: 'center',
-                alignItems: 'center'}}>
-
-=======
     <Flex style={containerStyles}>
->>>>>>> 05896f3a444e6f5a3ca0b73be265654670660ef7
       <Box style={boxStyles}>
         <Box textAlign='center'>
           <Text style={textStyles}>Create New Route</Text>
@@ -153,8 +140,6 @@ function NPNewRoute() {
         <br/>
       </Box>
     </Flex>
-    {showOpenRoutes}
-    </div>
   )
 };
 export default NPNewRoute;
