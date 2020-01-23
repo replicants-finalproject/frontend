@@ -59,7 +59,7 @@ function LoginHome(props) {
           <Flex style={containerStyles}>
 
             <Image src={waves} height='283px' width='50%' />
-            
+
             <Box className='box-button' style={boxStyles}
                   onClick={(e)=>setHasChosen('shipper')}>
               <Image src={shipperIcon} style={imageStyles} />
