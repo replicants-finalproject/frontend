@@ -10,7 +10,7 @@ function NPNewRoute() {
   const [arrivalDate, setArrivalDate] = useState('');
   const [openRoutes, setOpenRoutes] = useState([]);
 
-  let flaskEndpoint = (sessionStorage.getItem('user_type')) + '_new_route';
+  let flaskEndpoint = 'np_new_route';
   let data = {
     departureLocation: departureLocation,
     arrivalLocation: arrivalLocation,
@@ -28,6 +28,9 @@ function NPNewRoute() {
       }
       const res = await fetch(endpoint, configs);
       const json_res = await res.json();
+      console.log("Json_res")
+      console.log(json_res)
+      setOpenRoutes(json_res["Open routes"])
     } catch (err) {
       console.log(err)
     }
@@ -41,8 +44,6 @@ function NPNewRoute() {
       <Flex key={idx}>
       </Flex>
     ))
-  } else {
-    flask(flaskEndpoint, data)
   }
   
   const containerStyles = { 
@@ -94,6 +95,7 @@ function NPNewRoute() {
   };
 
   return (
+<<<<<<< HEAD
     <Flex style={containerStyles}>
       <Box style={boxStyles}>
         <Box textAlign='center'>
@@ -140,6 +142,57 @@ function NPNewRoute() {
         <br/>
       </Box>
     </Flex>
+=======
+    <div>
+      <Flex style={containerStyles}>
+        <Box style={boxStyles}>
+          <Box textAlign='center'>
+            <Text style={textStyles}>Create New Route</Text>
+          </Box><br/>
+
+          <label style={labelStyles} fontWeight='bold'>
+            Enter route information below: 
+          </label><br/><br/>
+
+          <Flex width='100%'>
+            <Box width={1/2}>
+              <label style={labelStyles} fontWeight='bold'>
+                Departure Location
+              </label><br/><br/>
+            </Box>
+            <Box>
+              <input style={inputStyles} placeholder='Location' 
+                      onChange={(e)=>setDepartureLocation(e.target.value)}/>
+              <br/>
+            </Box>
+          </Flex>
+
+          <Flex width='100%'>
+            <Box width={1/2}>
+              <label style={labelStyles} fontWeight='bold'>
+                Arrival Location
+              </label><br/><br/>
+              <label style={labelStyles} fontWeight='bold'>
+                Arrival Date
+              </label>
+            </Box>
+            <Box>    
+              <input style={inputStyles} placeholder='Location' 
+                      onChange={(e)=>setArrivalLocation(e.target.value)}/>
+              <br/>
+              <input style={inputStyles} placeholder='Date' 
+                      onChange={(e)=>setArrivalDate(e.target.value)}/>
+            </Box>
+          </Flex>
+
+          <Button onClick={(e)=>flask(flaskEndpoint, data)}>Enter Route</Button>
+          <br/>
+          <br/>
+        </Box>
+      </Flex>
+      {showOpenRoutes}
+    </div>
+>>>>>>> 24217598ebd883fe78433afba8fa6ce68037d64c
   )
 };
 export default NPNewRoute;
