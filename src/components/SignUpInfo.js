@@ -124,17 +124,12 @@ function SignUpInfo(props) {
                     <Flex justifyContent='right'>
                         <Button type='submit'>Create Account</Button>
                     </Flex>
-                    
                 </div>
 
                 { (props.hasChosen === 'shipper') ? 
                     <Image src={shipperIcon} style={imageStyles} /> : 
                     <Image src={nonprofitIcon} style={imageStyles} /> }
-
-                {/* <Button type='submit'>Create Account</Button> */}
-
             </Flex>
-
           </form>
         </Box>
         

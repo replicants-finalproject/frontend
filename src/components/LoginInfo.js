@@ -147,8 +147,6 @@ function LoginInfo(props) {
                   { (props.hasChosen === 'shipper') ? 
                       <Image src={shipperIcon} style={imageStyles} /> : 
                       <Image src={nonprofitIcon} style={imageStyles} /> }
-                  
-
                 </Flex>
 
                 <Flex justifyContent='space-between' marginTop='40px'>
