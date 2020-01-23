@@ -33,6 +33,7 @@ function NPNewRoute() {
     }
   }
 
+<<<<<<< HEAD
   let showOpenRoutes = <div></div>;
   if (openRoutes.length > 0) {
     console.log("Open Routes")
@@ -44,19 +45,29 @@ function NPNewRoute() {
   } else {
     flask(flaskEndpoint, data)
   }
+=======
+  const containerStyles = { 
+    flexWrap: 'row',
+    width: '100%',
+    paddingTop: '5%',
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center'
+  };
+>>>>>>> 05896f3a444e6f5a3ca0b73be265654670660ef7
 
   const boxStyles = {
-      minWidth: '650px',
+      minWidth: '600px',
       marginTop: '0px',
-      padding: '1% 2%',
+      padding: '1% 50px',
       textAlign: 'left',
-      fontFamily: 'Open Sans',
+      fontFamily: 'Work Sans',
       backgroundColor: '#eeefff',
       borderStyle: 'solid',
       borderWidth: '2px',
-      borderRadius: '8px',
+      borderRadius: '6px',
       borderColor: '#aaaaaa',
-      boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
+      boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)'
   };
 
   const textStyles = {
@@ -66,15 +77,10 @@ function NPNewRoute() {
       fontWeight: 'bold'
   };
 
-  const flexStyles = {
-      width: '350px',
-      justifyContent: 'space-between'
-  }
-
   const labelStyles = {
       width: '100px',
       color: '#000000',
-      fontFamily: 'Open Sans',
+      fontFamily: 'Work Sans',
       fontSize: '21px'
   };
 
@@ -90,6 +96,7 @@ function NPNewRoute() {
   };
 
   return (
+<<<<<<< HEAD
     <div>
     <Flex sx={{ flexWrap: 'row',
                 width: '100%',
@@ -98,6 +105,9 @@ function NPNewRoute() {
                 justifyContent: 'center',
                 alignItems: 'center'}}>
 
+=======
+    <Flex style={containerStyles}>
+>>>>>>> 05896f3a444e6f5a3ca0b73be265654670660ef7
       <Box style={boxStyles}>
         <Box textAlign='center'>
           <Text style={textStyles}>Create New Route</Text>
