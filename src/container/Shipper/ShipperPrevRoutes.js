@@ -112,7 +112,7 @@ function ShipperPrevRoutes() {
             <div style={cellStyles}><p>Arrival Location</p></div>
             <div style={cellStyles}><p>Arrival Date</p></div>
             <div style={cellStyles}><p>Total Containers</p></div>
-            <div style={cellStyles}><p>Arrival Containers</p></div>
+            <div style={cellStyles}><p>Available Containers</p></div>
           </Box>
 
           <Box style={columnStyles}>

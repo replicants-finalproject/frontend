@@ -15,8 +15,8 @@ import SignUpInfo from './SignUpInfo'
 
 function LoginInfo(props) {
     // const [company, setCompany] = useState('')
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    const [username, setUsername] = useState(null)
+    const [password, setPassword] = useState(null)
     const [newClient, setNewClient] = useState(false)
 
     let flaskEndpoint = props.hasChosen
@@ -52,7 +52,9 @@ function LoginInfo(props) {
     // Search button works with keyboard ENTER or RETURN
     const onFormSubmit = e => {
       e.preventDefault();
-      flask((flaskEndpoint + "_login"), data);
+      if (username && password) {
+        flask((flaskEndpoint + "_login"), data);
+      };
     };
 
     const containerStyles = { 
@@ -119,7 +121,7 @@ function LoginInfo(props) {
           <Flex style={containerStyles}>
 
             <Image src={waves} height='283px' width='50%' />
-            
+
             <Box style={boxStyles}>
               <form onSubmit={e => onFormSubmit(e)}>
                 <Flex justifyContent='space-between'>
