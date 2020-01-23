@@ -95,54 +95,6 @@ function NPNewRoute() {
   };
 
   return (
-<<<<<<< HEAD
-    <Flex style={containerStyles}>
-      <Box style={boxStyles}>
-        <Box textAlign='center'>
-          <Text style={textStyles}>Create New Route</Text>
-        </Box><br/>
-
-        <label style={labelStyles} fontWeight='bold'>
-          Enter route information below: 
-        </label><br/><br/>
-
-        <Flex width='100%'>
-          <Box width={1/2}>
-            <label style={labelStyles} fontWeight='bold'>
-              Departure Location
-            </label><br/><br/>
-          </Box>
-          <Box>
-            <input style={inputStyles} placeholder='Location' 
-                    onChange={(e)=>setDepartureLocation(e.target.value)}/>
-            <br/>
-          </Box>
-        </Flex>
-
-        <Flex width='100%'>
-          <Box width={1/2}>
-            <label style={labelStyles} fontWeight='bold'>
-              Arrival Location
-            </label><br/><br/>
-            <label style={labelStyles} fontWeight='bold'>
-              Arrival Date
-            </label>
-          </Box>
-          <Box>    
-            <input style={inputStyles} placeholder='Location' 
-                    onChange={(e)=>setArrivalLocation(e.target.value)}/>
-            <br/>
-            <input style={inputStyles} placeholder='Date' 
-                    onChange={(e)=>setArrivalDate(e.target.value)}/>
-          </Box>
-        </Flex>
-
-        <Button onClick={(e)=>flask(flaskEndpoint, data)}>Enter Route</Button>
-        <br/>
-        <br/>
-      </Box>
-    </Flex>
-=======
     <div>
       <Flex style={containerStyles}>
         <Box style={boxStyles}>
@@ -192,7 +144,6 @@ function NPNewRoute() {
       </Flex>
       {showOpenRoutes}
     </div>
->>>>>>> 24217598ebd883fe78433afba8fa6ce68037d64c
   )
 };
 export default NPNewRoute;
