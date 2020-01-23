@@ -10,9 +10,9 @@ import shipperIcon from '../images/shipper1.png';
 import nonprofitIcon from '../images/ribbon.png';
 
 function SignUpInfo(props) {
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const [company, setCompany] = useState('')
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [company, setCompany] = useState('');
 
     let flaskEndpoint = props.hasChosen
 
@@ -20,7 +20,14 @@ function SignUpInfo(props) {
         company: company,
         username: username, 
         password: password
-    }
+    };
+
+    // Search button works with keyboard ENTER or RETURN
+    const onFormSubmit = e => {
+        e.preventDefault();
+        props.flask((flaskEndpoint + "_create_account"), data);
+        console.log("FCGHJB");
+    };
 
     const containerStyles = { 
         flexWrap: 'row',
@@ -29,7 +36,7 @@ function SignUpInfo(props) {
         textAlign: 'center',
         justifyContent: 'center',
         alignItems: 'center'
-      };
+    };
 
     const boxStyles = {
         height: '310px',
@@ -84,46 +91,46 @@ function SignUpInfo(props) {
         <Flex style={containerStyles}>
 
         <Image src={waves} height='283px' width='50%' />
-        
+
         <Box style={boxStyles}>
+          <form onSubmit={e => onFormSubmit(e)}>
             <Flex justifyContent='space-between'>
                 <div>
+                    { (props.hasChosen === 'shipper') ? 
+                        <Text style={textStyles}>Shipper Sign Up</Text> : 
+                        <Text style={textStyles}>Nonprofit Sign Up</Text> }
+                    
+                    <Flex style={flexStyles}>
+                        <label style={labelStyles}>Company:</label>
+                        <input style={inputStyles} 
+                                onChange={(e)=>setCompany(String(e.target.value))} />
+                    </Flex>
+                    <br/>
 
-                { (props.hasChosen === 'shipper') ? 
-                    <Text style={textStyles}>Shipper Sign Up</Text> : 
-                    <Text style={textStyles}>Nonprofit Sign Up</Text> }
-                
-                <Flex style={flexStyles}>
-                    <label style={labelStyles}>Company:</label>
-                    <input style={inputStyles} 
-                            onChange={(e)=>setCompany(String(e.target.value))} />
-                </Flex>
-                <br/>
+                    <Flex style={flexStyles}>
+                        <label style={labelStyles}>Username:</label>
+                        <input style={inputStyles} 
+                                onChange={(e)=>setUsername(String(e.target.value))} />
+                    </Flex>
+                    <br/>
 
-                <Flex style={flexStyles}>
-                    <label style={labelStyles}>Username:</label>
-                    <input style={inputStyles} 
-                            onChange={(e)=>setUsername(String(e.target.value))} />
-                </Flex>
-                <br/>
+                    <Flex style={flexStyles}>
+                        <label style={labelStyles}>Password:</label>
+                        <input type="password" style={inputStyles} 
+                                onChange={(e)=>setPassword(String(e.target.value))} />
+                    </Flex>
+                    <br/>
 
-                <Flex style={flexStyles}>
-                    <label style={labelStyles}>Password:</label>
-                    <input type="password" style={inputStyles} 
-                            onChange={(e)=>setPassword(String(e.target.value))} />
-                </Flex>
-                <br/>
+                    <Flex justifyContent='right'>
+                        <Button type='submit'>Create Account</Button>
+                    </Flex>
                 </div>
 
                 { (props.hasChosen === 'shipper') ? 
                     <Image src={shipperIcon} style={imageStyles} /> : 
                     <Image src={nonprofitIcon} style={imageStyles} /> }
             </Flex>
-
-            <Flex justifyContent='right'>
-                <Button onClick={(e)=>props.flask((flaskEndpoint + "_create_account"), data)}>
-                    Create Account</Button>
-            </Flex>
+          </form>
         </Box>
         
         <Image src={waves} height='283px' width='50%' />

@@ -49,6 +49,12 @@ function LoginInfo(props) {
         }
     }
 
+    // Search button works with keyboard ENTER or RETURN
+    const onFormSubmit = e => {
+      e.preventDefault();
+      flask((flaskEndpoint + "_login"), data);
+    };
+
     const containerStyles = { 
       flexWrap: 'row',
       width: '100%',
@@ -115,7 +121,7 @@ function LoginInfo(props) {
             <Image src={waves} height='283px' width='50%' />
             
             <Box style={boxStyles}>
-
+              <form onSubmit={e => onFormSubmit(e)}>
                 <Flex justifyContent='space-between'>
                   <div>
 
@@ -141,16 +147,13 @@ function LoginInfo(props) {
                   { (props.hasChosen === 'shipper') ? 
                       <Image src={shipperIcon} style={imageStyles} /> : 
                       <Image src={nonprofitIcon} style={imageStyles} /> }
-                  
-
                 </Flex>
 
                 <Flex justifyContent='space-between' marginTop='40px'>
-                    <Button onClick={(e)=>flask((flaskEndpoint + "_login"), data)}>
-                        Login</Button>
-                    <Button onClick={(e)=>setNewClient(true)}>
-                        Sign Up</Button>
+                    <Button type='submit'>Login</Button>
+                    <Button onClick={(e)=>setNewClient(true)}>Sign Up</Button>
                 </Flex>
+              </form>
             </Box>
             
             <Image src={waves} height='283px' width='50%' />

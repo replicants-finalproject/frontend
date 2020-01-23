@@ -116,7 +116,7 @@ function ShipperNewRoute() {
             <input style={inputStyles} placeholder='Location' 
                     onChange={(e)=>setDepartureLocation(e.target.value)}/>
             <br/>
-            <input style={inputStyles} placeholder='Date' 
+            <input style={inputStyles} placeholder='MM/DD/YY' 
                     onChange={(e)=>setDepartureDate(e.target.value)}/>
           </Box>
         </Flex>
@@ -134,7 +134,7 @@ function ShipperNewRoute() {
             <input style={inputStyles} placeholder='Location' 
                     onChange={(e)=>setArrivalLocation(e.target.value)}/>
             <br/>
-            <input style={inputStyles} placeholder='Date' 
+            <input style={inputStyles} placeholder='MM/DD/YY' 
                     onChange={(e)=>setArrivalDate(e.target.value)}/>
           </Box>
         </Flex>

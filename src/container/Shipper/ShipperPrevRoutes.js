@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Flex, Box, Text } from 'rebass';
+import { Flex, Box, Text, Button } from 'rebass';
 
 
 function ShipperPrevRoutes() {
@@ -95,44 +95,24 @@ function ShipperPrevRoutes() {
       borderWidth: '0px 0px 1px 0px',
   };
 
-  const cellLeftStyles = {
-      width: '50%',
-      height: '30px',
-      paddingLeft: '3px',
-      color: '#000000',
-      fontSize: '16px',
-      borderStyle: 'solid',
-      borderWidth: '0px 1px 1px 0px',
-  };
-
-  const cellRightStyles = {
-    width: '50%',
-    height: '30px',
-    paddingLeft: '3px',
-    color: '#000000',
-    fontSize: '16px',
-    borderStyle: 'solid',
-    borderWidth: '0px 0px 1px 0px',
-  };
-
   let openRoutes = <div></div>;
   if (previousRoutes.length > 0) {
     console.log("Previous Routes")
     console.log(previousRoutes)
     openRoutes = previousRoutes.map((data) => (
       <Box style={gridStyles}>
-
+        
         <div style={labelStyles}><p> Shipper ID: {data[1]}</p></div>
-          <br/>
+        <br/>
 
         <Flex>
           <Box style={columnStyles}>
-            <div style={cellStyles}><p>Departure Location:</p></div>
-            <div style={cellStyles}><p>Departure Date:</p></div>
-            <div style={cellStyles}><p>Arrival Location:</p></div>
-            <div style={cellStyles}><p>Arrival Date:</p></div>
-            <div style={cellStyles}><p>Total Containers:</p></div>
-            <div style={cellStyles}><p>Arrival Containers:</p></div>
+            <div style={cellStyles}><p>Departure Location</p></div>
+            <div style={cellStyles}><p>Departure Date</p></div>
+            <div style={cellStyles}><p>Arrival Location</p></div>
+            <div style={cellStyles}><p>Arrival Date</p></div>
+            <div style={cellStyles}><p>Total Containers</p></div>
+            <div style={cellStyles}><p>Arrival Containers</p></div>
           </Box>
 
           <Box style={columnStyles}>
@@ -150,7 +130,7 @@ function ShipperPrevRoutes() {
     ))
   } else {
     flask(flaskEndpoint, data)
-  }
+  };
 
 
   return (

@@ -36,20 +36,10 @@ function NPNewRoute() {
     }
   }
 
-  let showOpenRoutes = <div></div>;
-  if (openRoutes.length > 0) {
-    console.log("Open Routes")
-    console.log(openRoutes)
-    showOpenRoutes = openRoutes.map((data, idx) => (
-      <Flex key={idx}>
-      </Flex>
-    ))
-  }
-
   const containerStyles = { 
     flexWrap: 'row',
     width: '100%',
-    paddingTop: '5%',
+    paddingTop: '3%',
     textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center'
@@ -83,6 +73,45 @@ function NPNewRoute() {
       fontSize: '21px'
   };
 
+  const label2Styles = {
+    width: '130px',
+    color: '#ffffff',
+    fontFamily: 'Work Sans',
+    fontSize: '21px'
+};
+
+  const gridStyles = {
+    width: '500px',
+    margin: '20px auto',
+    paddingTop: '10px',
+    backgroundColor: 'rgb(0, 51, 128)',
+    fontSize: '15px',
+    borderStyle: 'solid',
+    borderWidth: '0px',
+    borderRadius: '4px',
+    boxShadow: '1px 1px 7px -2px rgb(0, 51, 128)',
+  };
+
+  const columnStyles = {
+      width: '50%',
+      margin: '0px',
+      padding: '0px',
+      borderStyle: 'solid',
+      borderColor: '#0000000',
+      borderWidth: '0px 1px 0px 1px',
+  };
+
+  const cellStyles = {
+      width: '100%',
+      height: '30px',
+      paddingLeft: '3px',
+      backgroundColor: '#ffffff',
+      color: '#000000',
+      fontSize: '16px',
+      borderStyle: 'solid',
+      borderWidth: '0px 0px 1px 0px',
+  };
+
   const inputStyles = {
       height: '35px',
       width: '200px',
@@ -94,12 +123,52 @@ function NPNewRoute() {
       borderColor: '#aaaaaa'
   };
 
+  let showOpenRoutes = <div></div>;
+  if (openRoutes.length > 0) {
+    console.log("Open Routes")
+    console.log(openRoutes)
+    showOpenRoutes = openRoutes.map((data) => (
+      <Box style={gridStyles}>
+
+        <Flex justifyContent='space-evenly'>
+          <div style={label2Styles}><p> Shipper ID: {data[1]}</p></div>
+          <input style={inputStyles} placeholder='Number of Containers'/>
+          <Button>Select Route</Button>
+        </Flex>
+        <br/>
+
+        <Flex>
+          <Box style={columnStyles}>
+            <div style={cellStyles}><p>Departure Location</p></div>
+            <div style={cellStyles}><p>Departure Date</p></div>
+            <div style={cellStyles}><p>Arrival Location</p></div>
+            <div style={cellStyles}><p>Arrival Date</p></div>
+            <div style={cellStyles}><p>Total Containers</p></div>
+            <div style={cellStyles}><p>Arrival Containers</p></div>
+          </Box>
+
+          <Box style={columnStyles}>
+            <div style={cellStyles}><p>{ data[2] }</p></div>
+            <div style={cellStyles}><p>{ data[3] }</p></div>
+            <div style={cellStyles}><p>{ data[4] }</p></div>
+            <div style={cellStyles}><p>{ data[5] }</p></div>
+            <div style={cellStyles}><p>{ data[6] }</p></div>
+            <div style={cellStyles}><p>{ data[7] }</p></div>
+          </Box>
+        </Flex>
+
+        <br/>
+      </Box>
+    ))
+  };
+
+
   return (
     <div>
       <Flex style={containerStyles}>
         <Box style={boxStyles}>
           <Box textAlign='center'>
-            <Text style={textStyles}>Create New Route</Text>
+            <Text style={textStyles}>Search New Route</Text>
           </Box><br/>
 
           <label style={labelStyles} fontWeight='bold'>
@@ -125,24 +194,30 @@ function NPNewRoute() {
                 Arrival Location
               </label><br/><br/>
               <label style={labelStyles} fontWeight='bold'>
-                Arrival Date
+                Arrive By Date
               </label>
             </Box>
             <Box>    
               <input style={inputStyles} placeholder='Location' 
                       onChange={(e)=>setArrivalLocation(e.target.value)}/>
               <br/>
-              <input style={inputStyles} placeholder='Date' 
+              <input style={inputStyles} placeholder='MM/DD/YY' 
                       onChange={(e)=>setArrivalDate(e.target.value)}/>
             </Box>
           </Flex>
 
-          <Button onClick={(e)=>flask(flaskEndpoint, data)}>Enter Route</Button>
+          <Button onClick={(e)=>flask(flaskEndpoint, data)}>Search Routes</Button>
           <br/>
           <br/>
         </Box>
       </Flex>
-      {showOpenRoutes}
+      
+    <Flex style={containerStyles}>
+        <Box style={boxStyles}>
+            {showOpenRoutes}
+        </Box>
+    </Flex>
+
     </div>
   )
 };
