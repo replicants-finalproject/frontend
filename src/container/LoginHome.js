@@ -17,6 +17,15 @@ function LoginHome(props) {
 
     const [hasChosen, setHasChosen] = useState('')
 
+    const containerStyles = { 
+          flexWrap: 'row',
+          width: '100%',
+          paddingTop: '10%',
+          textAlign: 'center',
+          justifyContent: 'center',
+          alignItems: 'center'
+    };
+
     const boxStyles = {
           height: '310px',
           minWidth: '300px',
@@ -24,7 +33,7 @@ function LoginHome(props) {
           backgroundColor: '#eeefff',
           borderStyle: 'solid',
           borderWidth: '2px',
-          borderRadius: '8px',
+          borderRadius: '6px',
           borderColor: '#aaaaaa',
           boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
     };
@@ -47,16 +56,10 @@ function LoginHome(props) {
 
         { hasChosen ? <LoginInfo hasChosen={hasChosen} setID={props.setID} /> :
 
-          <Flex sx={{
-              flexWrap: 'row',
-              width: '100%',
-              paddingTop: '10%',
-              textAlign: 'center',
-              justifyContent: 'center',
-              alignItems: 'center'}}>
+          <Flex style={containerStyles}>
 
             <Image src={waves} height='283px' width='50%' />
-            
+
             <Box className='box-button' style={boxStyles}
                   onClick={(e)=>setHasChosen('shipper')}>
               <Image src={shipperIcon} style={imageStyles} />

@@ -33,18 +33,27 @@ function NPNewRoute() {
     }
   }
 
+  const containerStyles = { 
+    flexWrap: 'row',
+    width: '100%',
+    paddingTop: '5%',
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center'
+  };
+
   const boxStyles = {
-      minWidth: '650px',
+      minWidth: '600px',
       marginTop: '0px',
-      padding: '1% 2%',
+      padding: '1% 50px',
       textAlign: 'left',
-      fontFamily: 'Open Sans',
+      fontFamily: 'Work Sans',
       backgroundColor: '#eeefff',
       borderStyle: 'solid',
       borderWidth: '2px',
-      borderRadius: '8px',
+      borderRadius: '6px',
       borderColor: '#aaaaaa',
-      boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
+      boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)'
   };
 
   const textStyles = {
@@ -54,15 +63,10 @@ function NPNewRoute() {
       fontWeight: 'bold'
   };
 
-  const flexStyles = {
-      width: '350px',
-      justifyContent: 'space-between'
-  }
-
   const labelStyles = {
       width: '100px',
       color: '#000000',
-      fontFamily: 'Open Sans',
+      fontFamily: 'Work Sans',
       fontSize: '21px'
   };
 
@@ -78,13 +82,7 @@ function NPNewRoute() {
   };
 
   return (
-    <Flex sx={{ flexWrap: 'row',
-                width: '100%',
-                paddingTop: '10%',
-                textAlign: 'center',
-                justifyContent: 'center',
-                alignItems: 'center'}}>
-
+    <Flex style={containerStyles}>
       <Box style={boxStyles}>
         <Box textAlign='center'>
           <Text style={textStyles}>Create New Route</Text>

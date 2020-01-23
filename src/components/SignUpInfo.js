@@ -22,17 +22,26 @@ function SignUpInfo(props) {
         password: password
     }
 
+    const containerStyles = { 
+        flexWrap: 'row',
+        width: '100%',
+        paddingTop: '10%',
+        textAlign: 'center',
+        justifyContent: 'center',
+        alignItems: 'center'
+      };
+
     const boxStyles = {
         height: '310px',
         minWidth: '650px',
         marginTop: '0px',
         padding: '1% 2%',
         textAlign: 'left',
-        fontFamily: 'Open Sans',
+        fontFamily: 'Work Sans',
         backgroundColor: '#eeeeee',
         borderStyle: 'solid',
         borderWidth: '2px',
-        borderRadius: '8px',
+        borderRadius: '6px',
         borderColor: '#aaaaaa',
         boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
     };
@@ -53,7 +62,7 @@ function SignUpInfo(props) {
         width: '100px',
         paddingRight: '10px',
         color: '#000000',
-        fontFamily: 'Open Sans',
+        fontFamily: 'Work Sans',
         fontSize: '25px'
     };
 
@@ -72,62 +81,54 @@ function SignUpInfo(props) {
     }
 
     return(
-        <div>
-          <Flex sx={{
-                  flexWrap: 'row',
-                  width: '100%',
-                  paddingTop: '10%',
-                  textAlign: 'center',
-                  justifyContent: 'center',
-                  alignItems: 'center'}}>
+        <Flex style={containerStyles}>
 
-            <Image src={waves} height='283px' width='50%' />
-            
-            <Box style={boxStyles}>
-                <Flex justifyContent='space-between'>
-                  <div>
+        <Image src={waves} height='283px' width='50%' />
+        
+        <Box style={boxStyles}>
+            <Flex justifyContent='space-between'>
+                <div>
 
-                  { (props.hasChosen === 'shipper') ? 
-                      <Text style={textStyles}>Shipper Sign Up</Text> : 
-                      <Text style={textStyles}>Nonprofit Sign Up</Text> }
-                    
-                    <Flex style={flexStyles}>
-                        <label style={labelStyles}>Company:</label>
-                        <input style={inputStyles} 
-                                onChange={(e)=>setCompany(String(e.target.value))} />
-                    </Flex>
-                    <br/>
-
-                    <Flex style={flexStyles}>
-                        <label style={labelStyles}>Username:</label>
-                        <input style={inputStyles} 
-                                onChange={(e)=>setUsername(String(e.target.value))} />
-                    </Flex>
-                    <br/>
-
-                    <Flex style={flexStyles}>
-                        <label style={labelStyles}>Password:</label>
-                        <input type="password" style={inputStyles} 
-                                onChange={(e)=>setPassword(String(e.target.value))} />
-                    </Flex>
-                    <br/>
-                  </div>
-
-                  { (props.hasChosen === 'shipper') ? 
-                      <Image src={shipperIcon} style={imageStyles} /> : 
-                      <Image src={nonprofitIcon} style={imageStyles} /> }
+                { (props.hasChosen === 'shipper') ? 
+                    <Text style={textStyles}>Shipper Sign Up</Text> : 
+                    <Text style={textStyles}>Nonprofit Sign Up</Text> }
+                
+                <Flex style={flexStyles}>
+                    <label style={labelStyles}>Company:</label>
+                    <input style={inputStyles} 
+                            onChange={(e)=>setCompany(String(e.target.value))} />
                 </Flex>
+                <br/>
 
-                <Flex justifyContent='right'>
-                    <Button onClick={(e)=>props.flask((flaskEndpoint + "_create_account"), data)}>
-                        Create Account</Button>
+                <Flex style={flexStyles}>
+                    <label style={labelStyles}>Username:</label>
+                    <input style={inputStyles} 
+                            onChange={(e)=>setUsername(String(e.target.value))} />
                 </Flex>
-            </Box>
-            
-            <Image src={waves} height='283px' width='50%' />
+                <br/>
 
-          </Flex>
-        </div>
+                <Flex style={flexStyles}>
+                    <label style={labelStyles}>Password:</label>
+                    <input type="password" style={inputStyles} 
+                            onChange={(e)=>setPassword(String(e.target.value))} />
+                </Flex>
+                <br/>
+                </div>
+
+                { (props.hasChosen === 'shipper') ? 
+                    <Image src={shipperIcon} style={imageStyles} /> : 
+                    <Image src={nonprofitIcon} style={imageStyles} /> }
+            </Flex>
+
+            <Flex justifyContent='right'>
+                <Button onClick={(e)=>props.flask((flaskEndpoint + "_create_account"), data)}>
+                    Create Account</Button>
+            </Flex>
+        </Box>
+        
+        <Image src={waves} height='283px' width='50%' />
+
+        </Flex>
     )
 }
 

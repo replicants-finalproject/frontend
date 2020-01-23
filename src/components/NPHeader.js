@@ -11,7 +11,7 @@ const headerLinkStyles = {
   padding: '4px 4px',
   background: '#eeeeff',
   color: 'rgb(0, 51, 128)',
-  fontFamily: 'Open Sans',
+  fontFamily: 'Work Sans',
   fontSize: '15px',
   fontWeight: 'bold',
   borderStyle: 'solid',
