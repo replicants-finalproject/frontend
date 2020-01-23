@@ -8,9 +8,9 @@ function NPNewRoute() {
   const [departureLocation, setDepartureLocation] = useState('');
   const [arrivalLocation, setArrivalLocation] = useState('');
   const [arrivalDate, setArrivalDate] = useState('');
+  const [openRoutes, setOpenRoutes] = useState([]);
 
   let flaskEndpoint = (sessionStorage.getItem('user_type')) + '_new_route';
-
   let data = {
     departureLocation: departureLocation,
     arrivalLocation: arrivalLocation,
@@ -33,6 +33,19 @@ function NPNewRoute() {
     }
   }
 
+<<<<<<< HEAD
+  let showOpenRoutes = <div></div>;
+  if (openRoutes.length > 0) {
+    console.log("Open Routes")
+    console.log(openRoutes)
+    showOpenRoutes = openRoutes.map((data, idx) => (
+      <Flex key={idx}>
+      </Flex>
+    ))
+  } else {
+    flask(flaskEndpoint, data)
+  }
+=======
   const containerStyles = { 
     flexWrap: 'row',
     width: '100%',
@@ -41,6 +54,7 @@ function NPNewRoute() {
     justifyContent: 'center',
     alignItems: 'center'
   };
+>>>>>>> 05896f3a444e6f5a3ca0b73be265654670660ef7
 
   const boxStyles = {
       minWidth: '600px',
@@ -82,7 +96,18 @@ function NPNewRoute() {
   };
 
   return (
+<<<<<<< HEAD
+    <div>
+    <Flex sx={{ flexWrap: 'row',
+                width: '100%',
+                paddingTop: '10%',
+                textAlign: 'center',
+                justifyContent: 'center',
+                alignItems: 'center'}}>
+
+=======
     <Flex style={containerStyles}>
+>>>>>>> 05896f3a444e6f5a3ca0b73be265654670660ef7
       <Box style={boxStyles}>
         <Box textAlign='center'>
           <Text style={textStyles}>Create New Route</Text>
@@ -128,6 +153,8 @@ function NPNewRoute() {
         <br/>
       </Box>
     </Flex>
+    {showOpenRoutes}
+    </div>
   )
 };
 export default NPNewRoute;
