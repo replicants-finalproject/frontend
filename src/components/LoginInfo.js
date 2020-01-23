@@ -49,6 +49,13 @@ function LoginInfo(props) {
         }
     }
 
+    // Search button works with keyboard ENTER or RETURN
+    const onFormSubmit = e => {
+      e.preventDefault();
+      // getSearchData(searchRoute, searchTerm, setSearchData);
+      flask((flaskEndpoint + "_login"), data);
+    }
+
     const containerStyles = { 
       flexWrap: 'row',
       width: '100%',
@@ -146,8 +153,11 @@ function LoginInfo(props) {
                 </Flex>
 
                 <Flex justifyContent='space-between' marginTop='40px'>
-                    <Button onClick={(e)=>flask((flaskEndpoint + "_login"), data)}>
-                        Login</Button>
+
+                <form onSubmit={e => onFormSubmit(e)}>
+                    <Button type='submit'>Login</Button>
+                </form>
+
                     <Button onClick={(e)=>setNewClient(true)}>
                         Sign Up</Button>
                 </Flex>
