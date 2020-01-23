@@ -8,9 +8,9 @@ function NPNewRoute() {
   const [departureLocation, setDepartureLocation] = useState('');
   const [arrivalLocation, setArrivalLocation] = useState('');
   const [arrivalDate, setArrivalDate] = useState('');
+  const [openRoutes, setOpenRoutes] = useState([]);
 
   let flaskEndpoint = (sessionStorage.getItem('user_type')) + '_new_route';
-
   let data = {
     departureLocation: departureLocation,
     arrivalLocation: arrivalLocation,
@@ -31,6 +31,18 @@ function NPNewRoute() {
     } catch (err) {
       console.log(err)
     }
+  }
+
+  let showOpenRoutes = <div></div>;
+  if (openRoutes.length > 0) {
+    console.log("Open Routes")
+    console.log(openRoutes)
+    showOpenRoutes = openRoutes.map((data, idx) => (
+      <Flex key={idx}>
+      </Flex>
+    ))
+  } else {
+    flask(flaskEndpoint, data)
   }
 
   const boxStyles = {
@@ -78,6 +90,7 @@ function NPNewRoute() {
   };
 
   return (
+    <div>
     <Flex sx={{ flexWrap: 'row',
                 width: '100%',
                 paddingTop: '10%',
@@ -130,6 +143,8 @@ function NPNewRoute() {
         <br/>
       </Box>
     </Flex>
+    {showOpenRoutes}
+    </div>
   )
 };
 export default NPNewRoute;
