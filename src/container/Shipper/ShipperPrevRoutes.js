@@ -4,7 +4,7 @@ import moment from 'moment';
 
 
 function ShipperPrevRoutes() {
-  const [previousRoutes, setPreviousRoutes] = useState([])
+  const [previousRoutes, setPreviousRoutes] = useState(null)
 
   let flaskEndpoint = 'shipper_previous_routes'
   let shipperAccountID = sessionStorage.getItem('id')
@@ -98,7 +98,7 @@ function ShipperPrevRoutes() {
   };
 
   let openRoutes = <div></div>;
-  if (previousRoutes.length > 0) {
+  if (previousRoutes) {
     console.log("Previous Routes")
     console.log(previousRoutes)
     openRoutes = previousRoutes.map((data) => (
