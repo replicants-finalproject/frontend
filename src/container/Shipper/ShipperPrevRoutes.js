@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Flex, Box, Text, Button } from 'rebass';
+import moment from 'moment';
 
 
 function ShipperPrevRoutes() {
@@ -118,9 +119,9 @@ function ShipperPrevRoutes() {
 
           <Box style={columnStyles}>
             <div style={cellStyles}><p>{ data[2] }</p></div>
-            <div style={cellStyles}><p>{ data[3] }</p></div>
+            <div style={cellStyles}><p>{ moment.unix(data[3]).format("DD/MM/YYYY") }</p></div>
             <div style={cellStyles}><p>{ data[4] }</p></div>
-            <div style={cellStyles}><p>{ data[5] }</p></div>
+            <div style={cellStyles}><p>{ moment.unix(data[5]).format("DD/MM/YYYY") }</p></div>
             <div style={cellStyles}><p>{ data[6] }</p></div>
             <div style={cellStyles}><p>{ data[7] }</p></div>
           </Box>
@@ -138,7 +139,7 @@ function ShipperPrevRoutes() {
     <Flex style={containerStyles}>
       <div style={boxStyles}>
         <Box textAlign='center'>
-          <Text style={textStyles}>Previously Existing Routes</Text>
+          <Text style={textStyles}>Previous Routes</Text>
         </Box><br/>
 
         <div>{ openRoutes }</div>
