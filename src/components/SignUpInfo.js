@@ -10,9 +10,9 @@ import shipperIcon from '../images/shipper1.png';
 import nonprofitIcon from '../images/ribbon.png';
 
 function SignUpInfo(props) {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [company, setCompany] = useState('');
+    const [username, setUsername] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [company, setCompany] = useState(null);
 
     let flaskEndpoint = props.hasChosen
 
@@ -25,8 +25,9 @@ function SignUpInfo(props) {
     // Search button works with keyboard ENTER or RETURN
     const onFormSubmit = e => {
         e.preventDefault();
-        props.flask((flaskEndpoint + "_create_account"), data);
-        console.log("FCGHJB");
+        if (username && password && company) {
+            props.flask((flaskEndpoint + "_create_account"), data);
+        };
     };
 
     const containerStyles = { 

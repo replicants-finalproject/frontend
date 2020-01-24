@@ -76,11 +76,11 @@ function ShipperPrevRoutes() {
   };
 
   const columnStyles = {
-      width: '50%',
+      width: '49.7%',
       margin: '0px',
       padding: '0px',
       borderStyle: 'solid',
-      borderColor: '#0000000',
+      borderColor: 'rgb(0, 51, 128)',
       borderWidth: '0px 1px 0px 1px',
   };
 
@@ -92,6 +92,7 @@ function ShipperPrevRoutes() {
       color: '#000000',
       fontSize: '16px',
       borderStyle: 'solid',
+      borderColor: 'rgb(0, 51, 128)',
       borderWidth: '0px 0px 1px 0px',
   };
 
@@ -112,7 +113,7 @@ function ShipperPrevRoutes() {
             <div style={cellStyles}><p>Arrival Location</p></div>
             <div style={cellStyles}><p>Arrival Date</p></div>
             <div style={cellStyles}><p>Total Containers</p></div>
-            <div style={cellStyles}><p>Arrival Containers</p></div>
+            <div style={cellStyles}><p>Available Containers</p></div>
           </Box>
 
           <Box style={columnStyles}>
