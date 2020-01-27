@@ -18,33 +18,45 @@ function Header(props) {
 
   let userType = sessionStorage.getItem('user_type')
 
+  const headerStyles = {
+    height: '70px',
+    padding: '12px 0 0 0',
+    backgroundColor: 'rgb(33,60,71)',
+    justifyContent: 'center'
+  };
+
   const homeLinkStyles = {
-    color: '#ffffff',
+    color: '#eef0ff',
     fontFamily: 'Work Sans',
     fontSize: '40px',
     fontWeight: 'bold',
     textDecoration: 'none'
-  }
+  };
 
   const iconStyles = {
     height: '55px',
     width: '55px',
     marginTop: '-4px',
     marginRight: '15px',
-    backgroundColor: '#eeeeff',
+    backgroundColor: '#eef0ff',
     borderStyle: 'solid',
-    borderColor: '#eeeeff',
-    borderRadius: '6px'
-  }
+    borderColor: '#eef0ff',
+    borderRadius: '5px'
+  };
+
+  const mapStyles = { 
+    flexWrap: 'row',
+    width: '100%',
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center'
+  };
 
   return (
     <header>
-      <Flex sx={{
-              height: '70px',
-              padding: '12px 0 0 0',
-              bg: 'rgb(0, 51, 128)',
-              justifyContent: 'center'
-              }}>
+
+      {/* HEADER NAV BAR */}
+      <Flex style={headerStyles}>
 
         <Flex width='900px' justifyContent='space-between'>
           <Text style={homeLinkStyles}>Ship For Charity</Text>
@@ -60,10 +72,18 @@ function Header(props) {
             { (userType === 'shipper') && <Image src={shipperIcon} style={iconStyles} /> } 
             { (userType === 'np') &&  <Image src={nonprofitIcon} style={iconStyles} /> }
           </Box>
-
         </Flex>
-
       </Flex>
+
+      {/* MAP */}
+      { userType ?
+          <Box style={mapStyles}>
+            <iframe src="//www.shipmap.org" frameborder="0" height='400px' width='100%' >
+            </iframe>
+            <br/><br/>
+          </Box> : <div></div>
+      }
+
     </header>
   )
 };
