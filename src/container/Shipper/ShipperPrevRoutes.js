@@ -48,7 +48,6 @@ function ShipperPrevRoutes() {
       borderColor: '#aaaaaa',
       boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
       justifyContent: 'center'
-      // alignItems: 'center'
   };
 
   const textStyles = {
