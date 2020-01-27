@@ -9,14 +9,6 @@ function Home() {
 
   let userType = sessionStorage.getItem('user_type')
 
-  // let homePage;
-  // if (userType === 'shipper') {
-  //   homePage = <ShipperHome/>
-  // } else {
-  //   homePage = <NPHome/>
-  // }
-
-
     return ( 
       <div>
         { (userType === 'shipper') ? <ShipperHome/> : <NPHome/> }

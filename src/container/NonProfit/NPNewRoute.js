@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import moment from 'moment';
 
 // styling
 import { Flex, Box, Text, Button } from 'rebass';
@@ -156,9 +157,9 @@ function NPNewRoute() {
       <Box style={gridStyles}>
 
         <Flex justifyContent='space-evenly'>
-          <div style={label2Styles}><p> Shipper ID: {data[1]}</p></div>
+          <div style={label2Styles}><p>{data[1]}</p></div>
           <input style={inputStyles} placeholder='Number of Containers' onChange={(e)=>setContainers(e.target.value)}/>
-          <Button onClick={(e)=>saveAndSend(data[0], saveFlaskEndpoint, saveData)}>Select Route</Button>
+          <Button onClick={(e)=>saveAndSend(data[2], saveFlaskEndpoint, saveData)}>Select Route</Button>
         </Flex>
         <br/>
 
@@ -173,12 +174,12 @@ function NPNewRoute() {
           </Box>
 
           <Box style={columnStyles}>
-            <div style={cellStyles}><p>{ data[2] }</p></div>
             <div style={cellStyles}><p>{ data[3] }</p></div>
-            <div style={cellStyles}><p>{ data[4] }</p></div>
+            <div style={cellStyles}><p>{ moment.unix(data[4]).format("MM/DD/YYYY") }</p></div>
             <div style={cellStyles}><p>{ data[5] }</p></div>
-            <div style={cellStyles}><p>{ data[6] }</p></div>
+            <div style={cellStyles}><p>{ moment.unix(data[6]).format("MM/DD/YYYY") }</p></div>
             <div style={cellStyles}><p>{ data[7] }</p></div>
+            <div style={cellStyles}><p>{ data[8] }</p></div>
           </Box>
         </Flex>
 
@@ -190,6 +191,7 @@ function NPNewRoute() {
 
   return (
     <div>
+      <div>
       <Flex style={containerStyles}>
         <Box style={boxStyles}>
         <form onSubmit={e => onFormSubmit(e)}>
@@ -238,13 +240,13 @@ function NPNewRoute() {
         </form>
         </Box>
       </Flex>
-      
-    <Flex style={containerStyles}>
-        <Box style={boxStyles}>
-            {showOpenRoutes}
-        </Box>
-    </Flex>
 
+      <Flex style={containerStyles}>
+          <Box style={boxStyles}>
+              {showOpenRoutes}
+          </Box>
+      </Flex>
+      </div>
     </div>
   )
 };
