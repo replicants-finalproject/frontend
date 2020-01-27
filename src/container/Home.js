@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 // link and route imports
 import ShipperHome from './Shipper/ShipperHome';
 import NPHome from './NonProfit/NPHome';
+import { checkPropTypes } from 'prop-types';
 
 
 function Home() {
