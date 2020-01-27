@@ -32,10 +32,10 @@ function LoginHome(props) {
           marginTop: '0px',
           backgroundColor: '#eeefff',
           borderStyle: 'solid',
-          borderWidth: '2px',
+          borderWidth: '1px',
           borderRadius: '6px',
           borderColor: '#aaaaaa',
-          boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
+          boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
     };
 
     const imageStyles = {
@@ -63,7 +63,7 @@ function LoginHome(props) {
             <Box className='box-button' style={boxStyles}
                   onClick={(e)=>setHasChosen('shipper')}>
               <Image src={shipperIcon} style={imageStyles} />
-              <Text style={textStyles}>Shipper Login</Text>
+              <Text style={textStyles}>Shipper</Text>
             </Box>
 
             <Box minWidth='50px' />
@@ -71,7 +71,7 @@ function LoginHome(props) {
             <Box className='box-button' style={boxStyles}
                   onClick={(e)=>setHasChosen('np')}>
               <Image src={nonprofitIcon} style={imageStyles} />
-              <Text style={textStyles}>Nonprofit Login</Text>
+              <Text style={textStyles}>Nonprofit</Text>
             </Box>
 
             <Image src={waves} height='283px' width='50%' />

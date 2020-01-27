@@ -46,12 +46,12 @@ function SignUpInfo(props) {
         padding: '1% 2%',
         textAlign: 'left',
         fontFamily: 'Work Sans',
-        backgroundColor: '#eeeeee',
+        backgroundColor: '#eeeeff',
         borderStyle: 'solid',
-        borderWidth: '2px',
+        borderWidth: '1px',
         borderRadius: '6px',
         borderColor: '#aaaaaa',
-        boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
+        boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
     };
 
     const textStyles = {
@@ -122,8 +122,9 @@ function SignUpInfo(props) {
                     </Flex>
                     <br/>
 
-                    <Flex justifyContent='right'>
+                    <Flex justifyContent='space-between'>
                         <Button type='submit'>Create Account</Button>
+                        <Button onClick={(e) => window.location.reload()}>Cancel</Button>
                     </Flex>
                 </div>
 

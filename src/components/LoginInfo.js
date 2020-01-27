@@ -75,10 +75,10 @@ function LoginInfo(props) {
           fontFamily: 'Work Sans',
           backgroundColor: '#eeefff',
           borderStyle: 'solid',
-          borderWidth: '2px',
+          borderWidth: '1px',
           borderRadius: '6px',
           borderColor: '#aaaaaa',
-          boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
+          boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
     };
 
     const textStyles = {
@@ -151,9 +151,10 @@ function LoginInfo(props) {
                       <Image src={nonprofitIcon} style={imageStyles} /> }
                 </Flex>
 
-                <Flex justifyContent='space-between' marginTop='40px'>
+                <Flex width={3/5} justifyContent='space-between' marginTop='40px'>
                     <Button type='submit'>Login</Button>
                     <Button onClick={(e)=>setNewClient(true)}>Sign Up</Button>
+                    <Button onClick={(e) => window.location.reload()}>Cancel</Button>
                 </Flex>
               </form>
             </Box>
