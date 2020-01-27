@@ -61,8 +61,8 @@ function Header(props) {
         <Flex width='900px' justifyContent='space-between'>
           <Text style={homeLinkStyles}>Ship For Charity</Text>
 
-          { (userType === 'shipper') && <ShipperHeader /> } 
-          { (userType === 'np') &&  <NPHeader /> }
+          { (userType === 'shipper') && <ShipperHeader setID={props.setID}/> } 
+          { (userType === 'np') &&  <NPHeader setID={props.setID}/> }
 
           <Box styles={iconStyles}>
             { (userType === null) && (<div>

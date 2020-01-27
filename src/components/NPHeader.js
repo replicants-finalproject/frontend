@@ -5,6 +5,7 @@ import { Flex, Box, Text } from 'rebass';
 
 // Link-Header-Route
 import { Link } from 'react-router-dom';
+import { checkPropTypes } from 'prop-types';
 
 const headerLinkStyles = {
   marginTop: '10px',
@@ -22,11 +23,12 @@ const headerLinkStyles = {
 }
 
 
-function NPHeader() {
+function NPHeader(props) {
 
 
   function logout() {
     sessionStorage.setItem('id', '')
+    props.setID('')
   }
 
   return (
@@ -42,7 +44,7 @@ function NPHeader() {
 
         <Box width='20px' />
 
-        <Link onClick={(e)=>logout()} style={headerLinkStyles}>
+        <Link to='' onClick={(e)=>logout()} style={headerLinkStyles}>
           Logout</Link>
       </Flex>
     </nav>

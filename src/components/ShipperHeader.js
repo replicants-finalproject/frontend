@@ -7,7 +7,7 @@ import { Flex, Box, Text } from 'rebass';
 import { Link } from 'react-router-dom';
 
 
-function ShipperHeader() {
+function ShipperHeader(props) {
 
   const headerLinkStyles = {
     marginTop: '10px',
@@ -26,6 +26,7 @@ function ShipperHeader() {
 
   function logout() {
     sessionStorage.setItem('id', '')
+    props.setID('')
   }
 
   return (
@@ -46,7 +47,7 @@ function ShipperHeader() {
 
         <Box width='20px' />
 
-        <Link onClick={(e)=>logout()} style={headerLinkStyles}>
+        <Link to='' onClick={(e)=>logout()} style={headerLinkStyles}>
           Logout</Link>
 
       </Flex>
