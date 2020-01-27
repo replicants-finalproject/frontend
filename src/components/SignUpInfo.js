@@ -14,6 +14,7 @@ function SignUpInfo(props) {
     const [password, setPassword] = useState(null);
     const [company, setCompany] = useState(null);
     const [EIN, setEIN] = useState(null);
+    const [invalidMessage, setInvalidMessage] = useState(null);
 
     
     let flaskEndpoint = props.hasChosen
@@ -26,14 +27,12 @@ function SignUpInfo(props) {
         };
     } else {
         data = {
-            company: company,
             EIN: EIN,
             username: username, 
             password: password
         };
     }
 
-    let invalidMessage
     async function EINFlask(EIN, flaskEndpoint, data) {
         try {
           const endpoint = `http://localhost:5000/api/np_check_EIN`
@@ -46,11 +45,18 @@ function SignUpInfo(props) {
           }
           const res = await fetch(endpoint, configs);
           const json_res = await res.json();
-          if (json_res['EIN'] === "invalid") {
-              invalidMessage = "Invalid EIN. You must enter a valid Non Profit EIN number to continue."
-          } else {
-              props.flask((flaskEndpoint + "_create_account"), data)
-          }
+          if (json_res['data']['EIN'] === "invalid") {
+                setInvalidMessage("Invalid EIN. You must enter a valid Non Profit EIN number to continue.")
+            } else {
+                let companyName = json_res['data']['Company Name']
+                data = {
+                EIN: EIN,
+                companyName: companyName,
+                username: username, 
+                password: password
+                }
+                props.flask((flaskEndpoint + "_create_account"), data)
+            } 
         } catch (err) {
           console.log(err)
         }
@@ -145,11 +151,18 @@ function SignUpInfo(props) {
                             <input style={inputStyles} 
                                     onChange={(e)=>setCompany(String(e.target.value))} />
                         </Flex> :
-                        <Flex style={flexStyles}>
-                        <label style={labelStyles}>EIN:</label>
-                        <input style={inputStyles} 
-                                onChange={(e)=>setEIN(String(e.target.value))} />
-                        </Flex> }
+                        <div>
+                            <Flex style={flexStyles}>
+                            <label style={labelStyles}>EIN:</label>
+                            <input style={inputStyles} 
+                                    onChange={(e)=>setEIN(String(e.target.value))} />
+                            </Flex> 
+                            <Flex>
+                                {invalidMessage ? <p>{ invalidMessage }</p> : <p></p>}
+                            </Flex>
+                        </div>
+                    }
+
                     
                     <br/>
 
