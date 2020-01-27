@@ -63,7 +63,7 @@ function LoginHome(props) {
             <Box className='box-button' style={boxStyles}
                   onClick={(e)=>setHasChosen('shipper')}>
               <Image src={shipperIcon} style={imageStyles} />
-              <Text style={textStyles}>Shipper Login</Text>
+              <Text style={textStyles}>Shipper</Text>
             </Box>
 
             <Box minWidth='50px' />
@@ -71,7 +71,7 @@ function LoginHome(props) {
             <Box className='box-button' style={boxStyles}
                   onClick={(e)=>setHasChosen('np')}>
               <Image src={nonprofitIcon} style={imageStyles} />
-              <Text style={textStyles}>Nonprofit Login</Text>
+              <Text style={textStyles}>Nonprofit</Text>
             </Box>
 
             <Image src={waves} height='283px' width='50%' />
