@@ -114,6 +114,7 @@ function ShipperPrevRoutes() {
             <div style={cellStyles}><p>Arrival Date</p></div>
             <div style={cellStyles}><p>Total Containers</p></div>
             <div style={cellStyles}><p>Charity Containers</p></div>
+            <div style={cellStyles}><p>Empty Containers</p></div>
           </Box>
 
           <Box style={columnStyles}>
@@ -123,6 +124,8 @@ function ShipperPrevRoutes() {
             <div style={cellStyles}><p>{ moment.unix(data[6]).format("MM/DD/YYYY") }</p></div>
             <div style={cellStyles}><p>{ data[7] }</p></div>
             <div style={cellStyles}><p>{ data[7] - data[8] }</p></div>
+            <div style={cellStyles}><p>{ data[8] }</p></div>
+
           </Box>
         </Flex>
 
