@@ -35,7 +35,7 @@ function LoginHome(props) {
           borderWidth: '1px',
           borderRadius: '6px',
           borderColor: '#aaaaaa',
-          boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)',
+          boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
     };
 
     const imageStyles = {
