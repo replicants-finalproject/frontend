@@ -24,7 +24,7 @@ function Header(props) {
     fontSize: '40px',
     fontWeight: 'bold',
     textDecoration: 'none'
-  }
+  };
 
   const iconStyles = {
     height: '55px',
@@ -35,9 +35,9 @@ function Header(props) {
     borderStyle: 'solid',
     borderColor: '#eeeeff',
     borderRadius: '6px'
-  }
+  };
 
-  const containerStyles = { 
+  const mapStyles = { 
     flexWrap: 'row',
     width: '100%',
     textAlign: 'center',
@@ -47,6 +47,8 @@ function Header(props) {
 
   return (
     <header>
+
+      {/* HEADER NAV BAR */}
       <Flex sx={{
               height: '70px',
               padding: '12px 0 0 0',
@@ -69,8 +71,17 @@ function Header(props) {
             { (userType === 'np') &&  <Image src={nonprofitIcon} style={iconStyles} /> }
           </Box>
         </Flex>
-
       </Flex>
+
+      {/* MAP */}
+      { userType ?
+          <Box style={mapStyles}>
+            <iframe src="//www.shipmap.org" frameborder="0" height='400px' width='100%' >
+            </iframe>
+            <br/><br/>
+          </Box> : <div></div>
+      }
+
     </header>
   )
 };
