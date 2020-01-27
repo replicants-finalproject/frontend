@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Flex, Box, Text, Image } from 'rebass';
 
 // component import
-import LoginInfo from '../components/LoginInfo'
+import LoginInfo from '../components/LoginInfo';
 
 // file imports
 import './loginhome.css';
@@ -51,6 +51,7 @@ function LoginHome(props) {
           fontWeight: 'bold'
     };
 
+    
     return ( 
       <div>
 
