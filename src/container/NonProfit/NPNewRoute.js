@@ -78,10 +78,10 @@ function NPNewRoute() {
       fontFamily: 'Work Sans',
       backgroundColor: '#eeefff',
       borderStyle: 'solid',
-      borderWidth: '2px',
+      borderWidth: '1px',
       borderRadius: '6px',
       borderColor: '#aaaaaa',
-      boxShadow: '2px 2px 7px -1px rgb(120, 120, 120)'
+      boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)'
   };
 
   const textStyles = {
@@ -109,7 +109,7 @@ function NPNewRoute() {
     width: '500px',
     margin: '20px auto',
     paddingTop: '10px',
-    backgroundColor: 'rgb(0, 51, 128)',
+    backgroundColor: 'rgb(50, 100, 200)',
     fontSize: '15px',
     borderStyle: 'solid',
     borderWidth: '0px',
