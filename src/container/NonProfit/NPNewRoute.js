@@ -159,7 +159,10 @@ function NPNewRoute() {
         <Flex justifyContent='space-evenly'>
           <div style={label2Styles}><p>{data[1]}</p></div>
           <input style={inputStyles} placeholder='Number of Containers' onChange={(e)=>setContainers(e.target.value)}/>
-          <Button onClick={(e)=>saveAndSend(data[2], saveFlaskEndpoint, saveData)}>Select Route</Button>
+          <Button sx={{color: 'rgb(50, 100, 200)', backgroundColor: '#ffffff'}} 
+                  onClick={(e)=>saveAndSend(data[2], saveFlaskEndpoint, saveData)}>
+            Select Route
+            </Button>
         </Flex>
         <br/>
 
