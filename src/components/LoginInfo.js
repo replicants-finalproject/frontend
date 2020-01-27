@@ -5,7 +5,7 @@ import { Flex, Box, Text, Image, Button } from 'rebass';
 
 // file imports
 import '../container/loginhome.css';
-import waves from '../images/waves1.png';
+import waves from '../images/waves2.png';
 import shipperIcon from '../images/shipper1.png';
 import nonprofitIcon from '../images/ribbon.png';
 
@@ -73,17 +73,17 @@ function LoginInfo(props) {
           padding: '1% 2%',
           textAlign: 'left',
           fontFamily: 'Work Sans',
-          backgroundColor: '#eeefff',
+          backgroundColor: '#eef0ff',
           borderStyle: 'solid',
           borderWidth: '1px',
-          borderRadius: '6px',
-          borderColor: '#aaaaaa',
+          borderRadius: '5px',
+          borderColor: '#bbbbbb',
           boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
     };
 
     const textStyles = {
           padding: '10px 0px 25px 0px',
-          color: 'rgb(0, 68, 170)',
+          color: 'rgb(33,60,71)',
           fontSize: '34px',
           fontWeight: 'bold'
     };

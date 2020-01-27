@@ -46,17 +46,17 @@ function SignUpInfo(props) {
         padding: '1% 2%',
         textAlign: 'left',
         fontFamily: 'Work Sans',
-        backgroundColor: '#eeeeff',
+        backgroundColor: '#eef0ff',
         borderStyle: 'solid',
         borderWidth: '1px',
-        borderRadius: '6px',
-        borderColor: '#aaaaaa',
+        borderRadius: '5px',
+        borderColor: '#bbbbbb',
         boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
     };
 
     const textStyles = {
         padding: '10px 0px 25px 0px',
-        color: 'rgb(0, 68, 170)',
+        color: 'rgb(33,60,71)',
         fontSize: '34px',
         fontWeight: 'bold'
     };

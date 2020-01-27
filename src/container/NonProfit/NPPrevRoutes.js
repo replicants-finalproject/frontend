@@ -42,18 +42,18 @@ function NPPrevRoutes() {
       marginTop: '0px',
       textAlign: 'left',
       fontFamily: 'Work Sans',
-      backgroundColor: '#eeefff',
+      backgroundColor: '#eef5ff',
       borderStyle: 'solid',
       borderWidth: '1px',
-      borderRadius: '6px',
-      borderColor: '#aaaaaa',
+      borderRadius: '5px',
+      borderColor: '#bbbbbb',
       boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
       justifyContent: 'center'
   };
 
   const textStyles = {
       padding: '35px 0px 0px 0px',
-      color: 'rgb(0, 68, 170)',
+      color: 'rgb(33,60,71)',
       fontSize: '34px',
       fontWeight: 'bold'
   };
@@ -62,7 +62,7 @@ function NPPrevRoutes() {
     width: '80%',
     margin: '20px auto',
     paddingTop: '10px',
-    backgroundColor: 'rgb(50, 100, 200)',
+    backgroundColor: 'rgb(53, 117, 159)',
     fontSize: '15px',
     borderStyle: 'solid',
     borderWidth: '0px',
