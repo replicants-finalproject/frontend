@@ -44,18 +44,27 @@ function ShipperNewRoute() {
     }
   }
 
+  const mapStyles = { 
+    flexWrap: 'row',
+    width: '100%',
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center'
+  };
+
+
   const containerStyles = { 
     flexWrap: 'row',
     width: '100%',
-    paddingTop: '5%',
+    paddingTop: '3%',
     textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center'
   };
 
   const boxStyles = {
-      minWidth: '600px',
-      marginTop: '0px',
+      width: '600px',
+      // marginTop: '0px',
       padding: '1% 50px',
       textAlign: 'left',
       fontFamily: 'Work Sans',
@@ -92,75 +101,106 @@ function ShipperNewRoute() {
       borderColor: '#aaaaaa'
   };
 
+  const attributionStyles = { 
+    flexWrap: 'row',
+    width: '100%',
+    padding: '3%',
+    fontSize: '15px',
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center'
+  };
+
   return (
+    <div>
+      {/* MAP */}
+      <Box style={mapStyles}>
+        <iframe src="//www.shipmap.org" frameborder="0" height='400px' width='100%' >
+        </iframe>
+        <br/><br/>
+      </Box>
+
+    {/* NEW ROUTE FORM */}
     <Flex style={containerStyles}>
       <Box style={boxStyles}>
-        <Box textAlign='center'>
-          <Text style={textStyles}>Create New Route</Text>
-        </Box><br/>
+          <Box textAlign='center'>
+            <Text style={textStyles}>Create New Route</Text>
+          </Box><br/>
 
-        <label style={labelStyles} fontWeight='bold'>
-          Enter route information below: 
-        </label><br/><br/>
+          <label style={labelStyles} fontWeight='bold'>
+            Enter route information below: 
+          </label><br/><br/>
 
-        <Flex width='100%'>
-          <Box width={1/2}>
-            <label style={labelStyles} fontWeight='bold'>
-              Departure Location
-            </label><br/><br/>
-            <label style={labelStyles} fontWeight='bold'>
-              Departure Date
-            </label>
-          </Box>
-          <Box>
-            <input style={inputStyles} placeholder='Location' 
-                    onChange={(e)=>setDepartureLocation(e.target.value)}/>
-            <br/>
-            <input style={inputStyles} placeholder='MM/DD/YY' 
-                    onChange={(e)=>setDepartureDate(e.target.value)}/>
-          </Box>
-        </Flex>
+          <Flex width='100%'>
+            <Box width={1/2}>
+              <label style={labelStyles} fontWeight='bold'>
+                Departure Location
+              </label><br/><br/>
+              <label style={labelStyles} fontWeight='bold'>
+                Departure Date
+              </label>
+            </Box>
+            <Box>
+              <input style={inputStyles} placeholder='Location' 
+                      onChange={(e)=>setDepartureLocation(e.target.value)}/>
+              <br/>
+              <input style={inputStyles} placeholder='MM/DD/YY' 
+                      onChange={(e)=>setDepartureDate(e.target.value)}/>
+            </Box>
+          </Flex>
 
-        <Flex width='100%'>
-          <Box width={1/2}>
-            <label style={labelStyles} fontWeight='bold'>
-              Arrival Location
-            </label><br/><br/>
-            <label style={labelStyles} fontWeight='bold'>
-              Arrival Date
-            </label>
-          </Box>
-          <Box>    
-            <input style={inputStyles} placeholder='Location' 
-                    onChange={(e)=>setArrivalLocation(e.target.value)}/>
-            <br/>
-            <input style={inputStyles} placeholder='MM/DD/YY' 
-                    onChange={(e)=>setArrivalDate(e.target.value)}/>
-          </Box>
-        </Flex>
+          <Flex width='100%'>
+            <Box width={1/2}>
+              <label style={labelStyles} fontWeight='bold'>
+                Arrival Location
+              </label><br/><br/>
+              <label style={labelStyles} fontWeight='bold'>
+                Arrival Date
+              </label>
+            </Box>
+            <Box>    
+              <input style={inputStyles} placeholder='Location' 
+                      onChange={(e)=>setArrivalLocation(e.target.value)}/>
+              <br/>
+              <input style={inputStyles} placeholder='MM/DD/YY' 
+                      onChange={(e)=>setArrivalDate(e.target.value)}/>
+            </Box>
+          </Flex>
 
-        <Flex width='100%'>
-          <Box width={1/2}>
-            <label style={labelStyles} fontWeight='bold'>
-              Availability
-            </label>
-          </Box>
-          <Box>
-            <input style={inputStyles} placeholder='Available Containers' 
-                onChange={(e)=>setAvailableContainers(e.target.value)}/>
-          </Box>
-        </Flex>
+          <Flex width='100%'>
+            <Box width={1/2}>
+              <label style={labelStyles} fontWeight='bold'>
+                Availability
+              </label>
+            </Box>
+            <Box>
+              <input style={inputStyles} placeholder='Available Containers' 
+                  onChange={(e)=>setAvailableContainers(e.target.value)}/>
+            </Box>
+          </Flex>
 
-        <Button onClick={(e)=>flask(flaskEndpoint, data)}>Enter Route</Button>
-        <br/><br/>
-        { success ? 
-                    <Box textAlign='center'>
-                      <Text style={textStyles}>New Route Created!</Text>
-                    </Box> : 
-                    <div></div>  }
-        <br/>
+          <Button onClick={(e)=>flask(flaskEndpoint, data)}>Enter Route</Button>
+          <br/><br/>
+          { success ? 
+                      <Box textAlign='center'>
+                        <Text style={textStyles}>New Route Created!</Text>
+                      </Box> : 
+                      <div></div>  }
+          <br/>
       </Box>
     </Flex>
+
+    {/* ATTRIBUTION */}
+    <Flex style={attributionStyles}>
+      Route map Created by 
+      <a target="_top" href="https://www.kiln.digital/">
+        London-based data visualisation studio Kiln
+      </a>
+      <br/>
+      and the <a target="_top" href="http://www.bartlett.ucl.ac.uk/energy">UCL Energy Institute</a>
+    </Flex>
+
+  </div>
   )
 };
 export default ShipperNewRoute;

@@ -37,6 +37,14 @@ function Header(props) {
     borderRadius: '6px'
   }
 
+  const containerStyles = { 
+    flexWrap: 'row',
+    width: '100%',
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center'
+  };
+
   return (
     <header>
       <Flex sx={{
@@ -60,7 +68,6 @@ function Header(props) {
             { (userType === 'shipper') && <Image src={shipperIcon} style={iconStyles} /> } 
             { (userType === 'np') &&  <Image src={nonprofitIcon} style={iconStyles} /> }
           </Box>
-
         </Flex>
 
       </Flex>
