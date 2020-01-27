@@ -13,20 +13,64 @@ function SignUpInfo(props) {
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
     const [company, setCompany] = useState(null);
+    const [EIN, setEIN] = useState(null);
+    const [invalidMessage, setInvalidMessage] = useState(null);
 
+    
     let flaskEndpoint = props.hasChosen
+    let data
+    if (props.hasChosen === 'shipper') {
+        data = {
+            company: company,
+            username: username, 
+            password: password
+        };
+    } else {
+        data = {
+            EIN: EIN,
+            username: username, 
+            password: password
+        };
+    }
 
-    const data = {
-        company: company,
-        username: username, 
-        password: password
-    };
+    async function EINFlask(EIN, flaskEndpoint, data) {
+        try {
+          const endpoint = `http://localhost:5000/api/np_check_EIN`
+          const EINdata = {EIN: EIN}
+          const configs = {
+            method: 'POST',
+            body: JSON.stringify(EINdata),
+            mode: 'cors',
+            headers: {'Content-type' : 'application/json'}
+          }
+          const res = await fetch(endpoint, configs);
+          const json_res = await res.json();
+          if (json_res['data']['EIN'] === "invalid") {
+                setInvalidMessage("Invalid EIN. You must enter a valid Non Profit EIN number to continue.")
+            } else {
+                let companyName = json_res['data']['Company Name']
+                data = {
+                EIN: EIN,
+                companyName: companyName,
+                username: username, 
+                password: password
+                }
+                props.flask((flaskEndpoint + "_create_account"), data)
+            } 
+        } catch (err) {
+          console.log(err)
+        }
+    }
 
     // Search button works with keyboard ENTER or RETURN
     const onFormSubmit = e => {
         e.preventDefault();
-        if (username && password && company) {
-            props.flask((flaskEndpoint + "_create_account"), data);
+        if (username && password && (company || EIN)) {
+            if (props.hasChosen === 'shipper') {
+                props.flask((flaskEndpoint + "_create_account"), data);
+            } else {
+                EINFlask(EIN, flaskEndpoint, data)
+            }
         };
     };
 
@@ -101,11 +145,25 @@ function SignUpInfo(props) {
                         <Text style={textStyles}>Shipper Sign Up</Text> : 
                         <Text style={textStyles}>Nonprofit Sign Up</Text> }
                     
-                    <Flex style={flexStyles}>
-                        <label style={labelStyles}>Company:</label>
-                        <input style={inputStyles} 
-                                onChange={(e)=>setCompany(String(e.target.value))} />
-                    </Flex>
+                    { (props.hasChosen === 'shipper') ? 
+                        <Flex style={flexStyles}>
+                            <label style={labelStyles}>Company:</label>
+                            <input style={inputStyles} 
+                                    onChange={(e)=>setCompany(String(e.target.value))} />
+                        </Flex> :
+                        <div>
+                            <Flex style={flexStyles}>
+                            <label style={labelStyles}>EIN:</label>
+                            <input style={inputStyles} 
+                                    onChange={(e)=>setEIN(String(e.target.value))} />
+                            </Flex> 
+                            <Flex>
+                                {invalidMessage ? <p>{ invalidMessage }</p> : <p></p>}
+                            </Flex>
+                        </div>
+                    }
+
+                    
                     <br/>
 
                     <Flex style={flexStyles}>
