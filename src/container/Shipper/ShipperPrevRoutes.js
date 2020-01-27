@@ -44,7 +44,7 @@ function ShipperPrevRoutes() {
       backgroundColor: '#eef5ff',
       borderStyle: 'solid',
       borderWidth: '1px',
-      borderRadius: '5px',
+      borderRadius: '4px',
       borderColor: '#bbbbbb',
       boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
       justifyContent: 'center'
@@ -61,7 +61,7 @@ function ShipperPrevRoutes() {
     width: '80%',
     margin: '20px auto',
     paddingTop: '10px',
-    backgroundColor: 'rgb(50, 100, 200)',
+    backgroundColor: 'rgb(53, 117, 159)',
     fontSize: '15px',
     borderStyle: 'solid',
     borderWidth: '0px',

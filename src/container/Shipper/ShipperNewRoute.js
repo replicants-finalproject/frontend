@@ -64,21 +64,20 @@ function ShipperNewRoute() {
 
   const boxStyles = {
       width: '600px',
-      // marginTop: '0px',
       padding: '1% 50px',
       textAlign: 'left',
       fontFamily: 'Work Sans',
-      backgroundColor: '#eeefff',
+      backgroundColor: '#eef5ff',
       borderStyle: 'solid',
       borderWidth: '1px',
-      borderRadius: '6px',
-      borderColor: '#aaaaaa',
+      borderRadius: '4px',
+      borderColor: '#bbbbbb',
       boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
   };
 
   const textStyles = {
       padding: '0px 0px 5px 0px',
-      color: 'rgb(0, 68, 170)',
+      color: 'rgb(33,60,71)',
       fontSize: '34px',
       fontWeight: 'bold'
   };
