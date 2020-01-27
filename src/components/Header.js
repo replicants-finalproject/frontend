@@ -18,8 +18,15 @@ function Header(props) {
 
   let userType = sessionStorage.getItem('user_type')
 
+  const headerStyles = {
+    height: '70px',
+    padding: '12px 0 0 0',
+    backgroundColor: 'rgb(33,60,71)',
+    justifyContent: 'center'
+  };
+
   const homeLinkStyles = {
-    color: '#ffffff',
+    color: '#eef0ff',
     fontFamily: 'Work Sans',
     fontSize: '40px',
     fontWeight: 'bold',
@@ -31,10 +38,10 @@ function Header(props) {
     width: '55px',
     marginTop: '-4px',
     marginRight: '15px',
-    backgroundColor: '#eeeeff',
+    backgroundColor: '#eef0ff',
     borderStyle: 'solid',
-    borderColor: '#eeeeff',
-    borderRadius: '6px'
+    borderColor: '#eef0ff',
+    borderRadius: '5px'
   };
 
   const mapStyles = { 
@@ -49,12 +56,7 @@ function Header(props) {
     <header>
 
       {/* HEADER NAV BAR */}
-      <Flex sx={{
-              height: '70px',
-              padding: '12px 0 0 0',
-              bg: 'rgb(0, 51, 128)',
-              justifyContent: 'center'
-              }}>
+      <Flex style={headerStyles}>
 
         <Flex width='900px' justifyContent='space-between'>
           <Text style={homeLinkStyles}>Ship For Charity</Text>

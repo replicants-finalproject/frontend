@@ -113,12 +113,6 @@ function ShipperNewRoute() {
 
   return (
     <div>
-      {/* MAP
-      <Box style={mapStyles}>
-        <iframe src="//www.shipmap.org" frameborder="0" height='400px' width='100%' >
-        </iframe>
-        <br/><br/>
-      </Box> */}
 
     {/* NEW ROUTE FORM */}
     <Flex style={containerStyles}>
@@ -192,12 +186,12 @@ function ShipperNewRoute() {
 
     {/* ATTRIBUTION */}
     <Flex style={attributionStyles}>
-      Route map Created by 
+      Route map Created by -
       <a target="_top" href="https://www.kiln.digital/">
         London-based data visualisation studio Kiln
       </a>
       <br/>
-      and the <a target="_top" href="http://www.bartlett.ucl.ac.uk/energy">UCL Energy Institute</a>
+      - and the -<a target="_top" href="http://www.bartlett.ucl.ac.uk/energy">UCL Energy Institute</a>-
     </Flex>
 
   </div>
