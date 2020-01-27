@@ -47,7 +47,7 @@ function ShipperHeader(props) {
 
         <Box width='20px' />
 
-        <Link onClick={(e)=>logout()} style={headerLinkStyles}>
+        <Link to='' onClick={(e)=>logout()} style={headerLinkStyles}>
           Logout</Link>
 
       </Flex>
