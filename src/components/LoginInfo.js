@@ -151,9 +151,10 @@ function LoginInfo(props) {
                       <Image src={nonprofitIcon} style={imageStyles} /> }
                 </Flex>
 
-                <Flex justifyContent='space-between' marginTop='40px'>
+                <Flex width={3/5} justifyContent='space-between' marginTop='40px'>
                     <Button type='submit'>Login</Button>
                     <Button onClick={(e)=>setNewClient(true)}>Sign Up</Button>
+                    <Button onClick={(e) => window.location.reload()}>Cancel</Button>
                 </Flex>
               </form>
             </Box>

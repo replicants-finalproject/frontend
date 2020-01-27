@@ -122,8 +122,9 @@ function SignUpInfo(props) {
                     </Flex>
                     <br/>
 
-                    <Flex justifyContent='right'>
+                    <Flex justifyContent='space-between'>
                         <Button type='submit'>Create Account</Button>
+                        <Button onClick={(e) => window.location.reload()}>Cancel</Button>
                     </Flex>
                 </div>
 
