@@ -39,7 +39,7 @@ function App() {
         <ThemeProvider theme={theme}>
             <Header />
             <Router />
-            { id ? <Home/> : <LoginHome setID={setID}/>}
+            { id ? <Home setID={setID}/> : <LoginHome setID={setID}/>}
         </ThemeProvider>
         </BrowserRouter>
     </div>

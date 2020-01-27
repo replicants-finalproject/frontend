@@ -103,7 +103,7 @@ function ShipperPrevRoutes() {
     openRoutes = previousRoutes.map((data) => (
       <Box style={gridStyles}>
         
-        <div style={labelStyles}><p> Shipper ID: {data[1]}</p></div>
+        <div style={labelStyles}><p>{data[1]}</p></div>
         <br/>
 
         <Flex>
@@ -117,12 +117,12 @@ function ShipperPrevRoutes() {
           </Box>
 
           <Box style={columnStyles}>
-            <div style={cellStyles}><p>{ data[2] }</p></div>
-            <div style={cellStyles}><p>{ moment.unix(data[3]).format("DD/MM/YYYY") }</p></div>
-            <div style={cellStyles}><p>{ data[4] }</p></div>
-            <div style={cellStyles}><p>{ moment.unix(data[5]).format("DD/MM/YYYY") }</p></div>
-            <div style={cellStyles}><p>{ data[6] }</p></div>
+            <div style={cellStyles}><p>{ data[3] }</p></div>
+            <div style={cellStyles}><p>{ moment.unix(data[4]).format("MM/DD/YYYY") }</p></div>
+            <div style={cellStyles}><p>{ data[5] }</p></div>
+            <div style={cellStyles}><p>{ moment.unix(data[6]).format("MM/DD/YYYY") }</p></div>
             <div style={cellStyles}><p>{ data[7] }</p></div>
+            <div style={cellStyles}><p>{ data[8] }</p></div>
           </Box>
         </Flex>
 
