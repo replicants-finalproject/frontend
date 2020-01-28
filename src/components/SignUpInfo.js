@@ -71,7 +71,7 @@ function SignUpInfo(props) {
             } else {
                 EINFlask(EIN, flaskEndpoint, data)
             }
-        };
+        }
     };
 
     const containerStyles = { 
@@ -90,7 +90,7 @@ function SignUpInfo(props) {
         padding: '1% 2%',
         textAlign: 'left',
         fontFamily: 'Work Sans',
-        backgroundColor: '#eef0ff',
+        backgroundColor: '#eef5ff',
         borderStyle: 'solid',
         borderWidth: '1px',
         borderRadius: '5px',
@@ -108,7 +108,7 @@ function SignUpInfo(props) {
     const flexStyles = {
       width: '350px',
       justifyContent: 'space-between'
-    }
+    };
 
     const labelStyles = {
         width: '100px',
@@ -130,7 +130,7 @@ function SignUpInfo(props) {
       height: '160px',
       marginTop: '30px',
       paddingBottom: '0px',
-    }
+    };
 
     return(
         <Flex style={containerStyles}>
@@ -162,10 +162,8 @@ function SignUpInfo(props) {
                             </Flex>
                         </div>
                     }
-
                     
                     <br/>
-
                     <Flex style={flexStyles}>
                         <label style={labelStyles}>Username:</label>
                         <input style={inputStyles} 

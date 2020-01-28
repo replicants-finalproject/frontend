@@ -73,7 +73,7 @@ function LoginInfo(props) {
           padding: '1% 2%',
           textAlign: 'left',
           fontFamily: 'Work Sans',
-          backgroundColor: '#eef0ff',
+          backgroundColor: '#eef5ff',
           borderStyle: 'solid',
           borderWidth: '1px',
           borderRadius: '5px',
