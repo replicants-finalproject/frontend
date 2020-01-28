@@ -77,17 +77,17 @@ function NPNewRoute() {
       padding: '1% 50px',
       textAlign: 'left',
       fontFamily: 'Work Sans',
-      backgroundColor: '#eeefff',
+      backgroundColor: '#eef5ff',
       borderStyle: 'solid',
       borderWidth: '1px',
-      borderRadius: '6px',
-      borderColor: '#aaaaaa',
+      borderRadius: '5px',
+      borderColor: '#bbbbbb',
       boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)'
   };
 
   const textStyles = {
       padding: '0px 0px 5px 0px',
-      color: 'rgb(0, 68, 170)',
+      color: 'rgb(33,60,71)',
       fontSize: '34px',
       fontWeight: 'bold'
   };
@@ -110,7 +110,7 @@ function NPNewRoute() {
     width: '500px',
     margin: '20px auto',
     paddingTop: '10px',
-    backgroundColor: 'rgb(50, 100, 200)',
+    backgroundColor: 'rgb(53, 117, 159)',
     fontSize: '15px',
     borderStyle: 'solid',
     borderWidth: '0px',

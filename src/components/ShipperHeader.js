@@ -12,14 +12,13 @@ function ShipperHeader(props) {
   const headerLinkStyles = {
     marginTop: '10px',
     padding: '4px 4px',
-    background: '#eeeeff',
-    color: 'rgb(0, 51, 128)',
+    background: '#eef0ff',
+    color: 'rgb(33,60,71)',
     fontFamily: 'Work Sans',
     fontSize: '15px',
     fontWeight: 'bold',
-    borderStyle: 'solid',
     borderWidth: '0px',
-    borderRadius: '6px',
+    borderRadius: '3px',
     textDecoration: 'none',
     whiteSpace: 'nowrap'
   }

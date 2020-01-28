@@ -41,7 +41,7 @@ function Header(props) {
     backgroundColor: '#eef0ff',
     borderStyle: 'solid',
     borderColor: '#eef0ff',
-    borderRadius: '5px'
+    borderRadius: '3px'
   };
 
   const mapStyles = { 
