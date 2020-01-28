@@ -4,11 +4,11 @@ import React, { useState } from 'react';
 import { Flex, Box, Text, Image } from 'rebass';
 
 // component import
-import LoginInfo from '../components/LoginInfo'
+import LoginInfo from '../components/LoginInfo';
 
 // file imports
 import './loginhome.css';
-import waves from '../images/waves1.png';
+import waves from '../images/waves2.png';
 import shipperIcon from '../images/shipper1.png';
 import nonprofitIcon from '../images/ribbon.png';
 
@@ -33,7 +33,7 @@ function LoginHome(props) {
           backgroundColor: '#eef5ff',
           borderStyle: 'solid',
           borderWidth: '1px',
-          borderRadius: '6px',
+          borderRadius: '4px',
           borderColor: '#bbbbbb',
           boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
     };
@@ -46,11 +46,12 @@ function LoginHome(props) {
     const textStyles = {
           padding: '10px 0px',
           color: 'rgb(33,60,71)',
-          fontFamily: 'Open Sans',
+          fontFamily: 'Work Sans',
           fontSize: '34px',
           fontWeight: 'bold'
     };
 
+    
     return ( 
       <div>
 
@@ -58,7 +59,8 @@ function LoginHome(props) {
 
           <Flex style={containerStyles}>
 
-            <Image src={waves} height='283px' width='50%' />
+            <Box height='283px' width='50%' />
+            {/* <Image src={waves} height='283px' width='50%' /> */}
 
             <Box className='box-button' style={boxStyles}
                   onClick={(e)=>setHasChosen('shipper')}>
@@ -74,7 +76,8 @@ function LoginHome(props) {
               <Text style={textStyles}>Nonprofit</Text>
             </Box>
 
-            <Image src={waves} height='283px' width='50%' />
+            <Box height='283px' width='50%' />
+            {/* <Image src={waves} height='283px' width='50%' /> */}
 
           </Flex>
         }
