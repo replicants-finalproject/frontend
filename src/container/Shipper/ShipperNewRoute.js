@@ -172,7 +172,10 @@ function ShipperNewRoute() {
             </Box>
           </Flex>
 
-          <Button onClick={(e)=>flask(flaskEndpoint, data)}>Enter Route</Button>
+          <Button sx={{color: '#eef5ff', backgroundColor: 'rgb(33, 60, 71)'}}
+                  onClick={(e)=>flask(flaskEndpoint, data)}>
+            Enter Route
+          </Button>
           <br/><br/>
           { success ? 
                       <Box textAlign='center'>

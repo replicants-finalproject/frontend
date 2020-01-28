@@ -5,7 +5,7 @@ import { Flex, Box, Text, Image, Button } from 'rebass';
 
 // file imports
 import '../container/loginhome.css';
-import waves from '../images/waves1.png';
+import waves from '../images/waves4.png';
 import shipperIcon from '../images/shipper1.png';
 import nonprofitIcon from '../images/ribbon.png';
 
@@ -181,8 +181,14 @@ function SignUpInfo(props) {
                     <br/>
 
                     <Flex justifyContent='space-between'>
-                        <Button type='submit'>Create Account</Button>
-                        <Button onClick={(e) => window.location.reload()}>Cancel</Button>
+                        <Button sx={{color: '#eef5ff', backgroundColor: 'rgb(33, 60, 71)'}}
+                                type='submit'>
+                            Create Account
+                        </Button>
+                        <Button sx={{color: '#eef5ff', backgroundColor: 'rgb(33, 60, 71)'}}
+                                onClick={(e) => window.location.reload()}>
+                            Cancel
+                        </Button>
                     </Flex>
                 </div>
 

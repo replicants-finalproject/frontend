@@ -8,7 +8,7 @@ import LoginInfo from '../components/LoginInfo';
 
 // file imports
 import './loginhome.css';
-import waves from '../images/waves2.png';
+import waves from '../images/waves4.png';
 import shipperIcon from '../images/shipper1.png';
 import nonprofitIcon from '../images/ribbon.png';
 
@@ -59,8 +59,8 @@ function LoginHome(props) {
 
           <Flex style={containerStyles}>
 
-            <Box height='283px' width='50%' />
-            {/* <Image src={waves} height='283px' width='50%' /> */}
+            {/* <Box height='283px' width='50%' /> */}
+            <Image src={waves} height='283px' width='50%' />
 
             <Box className='box-button' style={boxStyles}
                   onClick={(e)=>setHasChosen('shipper')}>
@@ -76,8 +76,8 @@ function LoginHome(props) {
               <Text style={textStyles}>Nonprofit</Text>
             </Box>
 
-            <Box height='283px' width='50%' />
-            {/* <Image src={waves} height='283px' width='50%' /> */}
+            {/* <Box height='283px' width='50%' /> */}
+            <Image src={waves} height='283px' width='50%' />
 
           </Flex>
         }
