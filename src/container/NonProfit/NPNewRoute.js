@@ -58,6 +58,18 @@ function NPNewRoute() {
   const onFormSubmit = e => {
     e.preventDefault();
     flask(searchFlaskEndpoint, searchData);
+
+    let state = {value: 'coconut'};
+
+    function handleChange(event) {
+      let setState = {value: event.target.value};
+    }
+  
+    function handleSubmit(event) {
+      alert('Your favorite flavor is: ' + state.value);
+      event.preventDefault();
+    }
+
   };
 
   
@@ -104,7 +116,7 @@ function NPNewRoute() {
     color: '#ffffff',
     fontFamily: 'Work Sans',
     fontSize: '21px'
-};
+  };
 
   const gridStyles = {
     width: '500px',
