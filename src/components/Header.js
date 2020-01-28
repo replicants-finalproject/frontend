@@ -65,10 +65,11 @@ function Header(props) {
           { (userType === 'np') &&  <NPHeader  id={props.id} setID={props.setID}/> }
 
           <Box styles={iconStyles}>
-            { (userType === null) && (<div>
-                                        <Image src={shipperIcon} style={iconStyles} /> 
-                                        <Image src={nonprofitIcon} style={iconStyles} />
-                                      </div>) }
+            { (userType === null || userType === "logout") && 
+                                    (<div>
+                                      <Image src={shipperIcon} style={iconStyles} /> 
+                                      <Image src={nonprofitIcon} style={iconStyles} />
+                                    </div>) }
             { (userType === 'shipper') && <Image src={shipperIcon} style={iconStyles} /> } 
             { (userType === 'np') &&  <Image src={nonprofitIcon} style={iconStyles} /> }
           </Box>
