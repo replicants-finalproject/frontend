@@ -10,6 +10,7 @@ import shipperIcon from '../images/shipper1.png';
 import nonprofitIcon from '../images/ribbon.png';
 
 function SignUpInfo(props) {
+    const [email, setEmail] = useState(null);
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
     const [company, setCompany] = useState(null);
@@ -23,13 +24,15 @@ function SignUpInfo(props) {
         data = {
             company: company,
             username: username, 
-            password: password
+            password: password,
+            email: email
         };
     } else {
         data = {
             EIN: EIN,
             username: username, 
-            password: password
+            password: password,
+            email: email
         };
     }
 
@@ -53,7 +56,8 @@ function SignUpInfo(props) {
                 EIN: EIN,
                 companyName: companyName,
                 username: username, 
-                password: password
+                password: password,
+                email: email
                 }
                 props.flask((flaskEndpoint + "_create_account"), data)
             } 
@@ -84,7 +88,7 @@ function SignUpInfo(props) {
     };
 
     const boxStyles = {
-        height: '310px',
+        height: '370px',
         minWidth: '650px',
         marginTop: '0px',
         padding: '1% 2%',
@@ -175,6 +179,13 @@ function SignUpInfo(props) {
                         <label style={labelStyles}>Password:</label>
                         <input type="password" style={inputStyles} 
                                 onChange={(e)=>setPassword(String(e.target.value))} />
+                    </Flex>
+                    <br/>
+
+                    <Flex style={flexStyles}>
+                        <label style={labelStyles}>Email:</label>
+                        <input type="email" style={inputStyles} 
+                                onChange={(e)=>setEmail(String(e.target.value))} />
                     </Flex>
                     <br/>
 
