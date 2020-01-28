@@ -76,13 +76,13 @@ function Header(props) {
       </Flex>
 
       {/* MAP */}
-      { userType ?
+      {/* { userType ?
           <Box style={mapStyles}>
             <iframe src="//www.shipmap.org" frameborder="0" height='400px' width='100%' >
             </iframe>
             <br/><br/>
           </Box> : <div></div>
-      }
+      } */}
 
     </header>
   )
