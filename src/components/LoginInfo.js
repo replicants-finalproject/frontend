@@ -5,7 +5,7 @@ import { Flex, Box, Text, Image, Button } from 'rebass';
 
 // file imports
 import '../container/loginhome.css';
-import waves from '../images/waves4.png';
+import waves from '../images/waves5.png';
 import shipperIcon from '../images/shipper1.png';
 import nonprofitIcon from '../images/ribbon.png';
 

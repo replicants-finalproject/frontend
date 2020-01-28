@@ -8,7 +8,7 @@ import LoginInfo from '../components/LoginInfo';
 
 // file imports
 import './loginhome.css';
-import waves from '../images/waves4.png';
+import waves from '../images/waves5.png';
 import shipperIcon from '../images/shipper1.png';
 import nonprofitIcon from '../images/ribbon.png';
 
