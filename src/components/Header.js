@@ -61,8 +61,8 @@ function Header(props) {
         <Flex width='900px' justifyContent='space-between'>
           <Text style={homeLinkStyles}>Ship For Charity</Text>
 
-          { (userType === 'shipper') && <ShipperHeader setID={props.setID}/> } 
-          { (userType === 'np') &&  <NPHeader setID={props.setID}/> }
+          { (userType === 'shipper') && <ShipperHeader id={props.id} setID={props.setID}/> } 
+          { (userType === 'np') &&  <NPHeader  id={props.id} setID={props.setID}/> }
 
           <Box styles={iconStyles}>
             { (userType === null) && (<div>
@@ -76,7 +76,7 @@ function Header(props) {
       </Flex>
 
       {/* MAP */}
-      { userType ?
+      { props.id ?
           <Box style={mapStyles}>
             <iframe src="//www.shipmap.org" frameborder="0" height='400px' width='100%' >
             </iframe>

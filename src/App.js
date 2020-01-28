@@ -37,7 +37,7 @@ function App() {
     <div>
         <BrowserRouter>
         <ThemeProvider theme={theme}>
-            <Header setID={setID}/>
+            <Header setID={setID} id={id}/>
             <Router />
             { id ? <Home/> : <LoginHome setID={setID}/>}
         </ThemeProvider>
