@@ -9,7 +9,7 @@ import ShipperHeader from './ShipperHeader';
 import NPHeader from './NPHeader';
 
 // files
-import shipForCharityIcon from '../images/shipForCharity.png';
+// import mapBanner from '../images/mapBanner.png';
 import shipperIcon from '../images/shipper1.png';
 import nonprofitIcon from '../images/ribbon.png';
 
