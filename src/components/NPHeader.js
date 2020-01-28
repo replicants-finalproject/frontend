@@ -16,7 +16,7 @@ const headerLinkStyles = {
   fontSize: '15px',
   fontWeight: 'bold',
   borderWidth: '0px',
-  borderRadius: '5px',
+  borderRadius: '3px',
   textDecoration: 'none',
   whiteSpace: 'nowrap'
 }
