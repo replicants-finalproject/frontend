@@ -25,7 +25,7 @@ function ShipperHeader(props) {
 
   function logout() {
     sessionStorage.setItem('id', '')
-    sessionStorage.setItem('user_type', null)
+    sessionStorage.setItem('user_type', "logout")
     props.setID('')
   }
 

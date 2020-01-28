@@ -237,7 +237,9 @@ function NPNewRoute() {
             </Box>
           </Flex>
 
-          <Button type='submit'>Search Routes</Button>
+          <Button type='submit' sx={{color: '#eef5ff', backgroundColor: 'rgb(33, 60, 71)'}}>
+            Search Routes
+          </Button>
           <br/>
           <br/>
         </form>
