@@ -225,8 +225,16 @@ function NPNewRoute() {
               </label><br/><br/>
             </Box>
             <Box>
-              <input style={inputStyles} placeholder='Location' 
-                      onChange={(e)=>setDepartureLocation(e.target.value)}/>
+              {/* <input style={inputStyles} placeholder='Location' 
+                      onChange={(e)=>setDepartureLocation(e.target.value)}/> */}
+              <label>
+                <select onChange={(e)=>setDepartureLocation(e.target.value)}>
+                    <option value="New York/New Jersey">New York/New Jersey</option>
+                    <option value="Savannah">Savannah</option>
+                    <option value="Virginia">Virginia</option>
+                    <option value="Charleston">Charleston</option>
+                </select>
+              </label>
               <br/>
             </Box>
           </Flex>
@@ -241,8 +249,16 @@ function NPNewRoute() {
               </label>
             </Box>
             <Box>    
-              <input style={inputStyles} placeholder='Location' 
-                      onChange={(e)=>setArrivalLocation(e.target.value)}/>
+              {/* <input style={inputStyles} placeholder='Location' 
+                      onChange={(e)=>setArrivalLocation(e.target.value)}/> */}
+              <label>
+                <select onChange={(e)=>setArrivalLocation(e.target.value)}>
+                    <option value="Tangier-Med, Morocco">Tangier-Med, Morocco</option>
+                    <option value="Abidjan, Ivory Coast">Abidjan, Ivory Coast</option>
+                    <option value="Lagos, Nigeria">Lagos, Nigeria</option>
+                    <option value="Richards Bay, South Africa">Richards Bay, South Africa</option>
+                </select>
+              </label>
               <br/>
               <input style={inputStyles} placeholder='MM/DD/YY' 
                       onChange={(e)=>setArrivalDate(e.target.value)}/>
